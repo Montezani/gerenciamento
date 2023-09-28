@@ -29,11 +29,11 @@ const Agendamentos = () => {
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <View style={{
                 justifyContent: 'center',
-                alignItems: 'flex-start',
+                alignItems: 'center',
                 padding: '30px',
                 backgroundColor: '#e4ceed',
                 height: '700px',
-                width: '320px',
+                width: '520px',
                 borderRadius: '40px'
             }}>
 
@@ -41,7 +41,7 @@ const Agendamentos = () => {
 
                 <Text style={{
                     textAlign: 'left',
-                    width: '146px',
+                    width: 'auto',
                     height: '40px',
                     borderRadius: '50px',
                     fontWeight: 'bold',
@@ -57,7 +57,7 @@ const Agendamentos = () => {
 
                 <Text style={{
                     textAlign: 'left',
-                    width: '146px',
+                    width: 'auto',
                     height: '49px',
                     borderRadius: '50px',
                     fontWeight: 'bold',
