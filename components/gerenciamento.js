@@ -1,10 +1,12 @@
+import React, {useState, useEffect } from "react";
+
 import { Text, View, StyleSheet, TextInput, TouchableOpacity, FlatList, KeyboardAvoidingView, Platform} from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import React, {useState, useEffect } from "react";
 
-export const Gerenciamento = () => {
+
+const Gerenciamento = () => {
   const [task, setTask] = useState(['Lab. 1','Lab. 2','Lab. 3','Lab. 4','Lab. 5','Lab. 6','Quadra','Sala de informática','Sala temática','Lab. enfermagem','Lab. farmácia','Lab. prancheta','Áudio visual','Oficina de artes','Lab. materiais','Lab. prancheta 2','Lab. ciências e biologia']); //lista
   const [newTask, setNewTask] = useState(""); //input add tarefa 
 
@@ -103,3 +105,5 @@ export const Gerenciamento = () => {
     </>
   );
 };
+
+export default Gerenciamento;
