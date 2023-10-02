@@ -11,6 +11,7 @@ import Ambientes from './components/ambientes'
 import Agendamentos from './components/agendamento'
 
 import AcessoTelas from './components/telas'
+import TelaInicio from './components/tela_inicio'
 
 
 const Stack = createNativeStackNavigator();
@@ -105,6 +106,20 @@ const Rotas = () => {
         />
 
         <Stack.Screen name='agendamentos' component={Agendamentos}
+          options={{
+            headerTitleAlign: 'center',
+            headerTitleStyle: {
+              fontSize: 20,
+              fontWeight: 'bold',
+            },
+            headerStyle: {
+              backgroundColor: '#E1CBEE',
+
+            },
+          }}
+        />
+
+          <Stack.Screen name='tela_inicio' component={tela_inicio} //NÃO ABRE NO WEB
           options={{
             headerTitleAlign: 'center',
             headerTitleStyle: {
