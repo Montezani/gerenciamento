@@ -10,7 +10,7 @@ export default function CadastroScreen() {
 
   const handleCadastro = () => {
     // Implemente a lógica de cadastro aqui
-    // Por exemplo, você pode fazer uma chamada à API ou armazenar os dados localmente.
+    
     console.log('Nome:', nome);
     console.log('Email:', email);
     console.log('Senha:', senha);
