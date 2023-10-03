@@ -16,7 +16,7 @@ const Gerenciamento = () => {
       flex: 1,
     },
   
-    Button:{
+    botaoAdd:{
       height: 40,
       width: 40,
       justifyContent: "center",
@@ -96,11 +96,10 @@ const Gerenciamento = () => {
             />
           </View>
   
-          <TouchableOpacity style={styles.Button}>
+          <TouchableOpacity style={styles. botaoAdd}>
             <AntDesign name="plus" size={24} color="white" />
           </TouchableOpacity>
   
-        
       </KeyboardAvoidingView>
     </>
   );

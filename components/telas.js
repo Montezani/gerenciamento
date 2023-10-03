@@ -31,7 +31,7 @@ function Botoes({ navigation }) {
       />
       <Button
         title="tela inicio"
-        onPress={() => navigation.navigate('Telainicio')}
+        onPress={() => navigation.navigate('gerenciamento')}
       />
     </View>
   );
