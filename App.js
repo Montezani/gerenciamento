@@ -119,7 +119,7 @@ const Rotas = () => {
           }}
         />
 
-          <Stack.Screen name='tela_inicio' component={tela_inicio} //NÃO ABRE NO WEB
+          <Stack.Screen name='tela_inicio' component={tela_inicio} 
           options={{
             headerTitleAlign: 'center',
             headerTitleStyle: {

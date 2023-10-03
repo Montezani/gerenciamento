@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
   color: 'white',
   fontWeight: 'BOLD',
   },
+  
  buttonEntrar: {
   width: '50%',
   height: 42,
