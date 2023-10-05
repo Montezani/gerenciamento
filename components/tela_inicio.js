@@ -1,17 +1,38 @@
-import React, {useState} from "react";
-
-import { Text, View, StyleSheet, TextInput, TouchableOpacity, Image} from 'react-native';
-
-import icone from '../assets/icon-tcc.png';
+import React from 'react';
+import { View, Text, Image, StyleSheet } from 'react-native';
+import icone from '../assets/icon-TCC.png';
 
 
-const telaInicio = () => {
-  
+const MinhaPagina = () => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.titulo}>Minha Página</Text>
+      <View style={styles.conteudo}>
+      <Image source={icone} style={styles.logo} />
+      
 
-  const styles = StyleSheet.create({
-
-    
-});
+        <Text>Teste</Text>
+      </View>
+    </View>
+  );
 };
 
-export default Gerenciamento;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+  },
+  titulo: {
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+  conteudo: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
+
+export default MinhaPagina;

@@ -26,6 +26,9 @@ const Agendamentos = () => {
 
 
     return (
+       
+
+
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <View style={{
                 justifyContent: 'center',
@@ -34,7 +37,8 @@ const Agendamentos = () => {
                 backgroundColor: '#e4ceed',
                 height: '700px',
                 width: '520px',
-                borderRadius: '40px'
+                borderRadius: '40px',
+               
             }}>
 
 
@@ -114,9 +118,14 @@ const Agendamentos = () => {
                 }}>
                 </TextInput>
 
-                <Button title='AGENDAR' style={{ marginTop: '10px' }} color='#924DC1' onPress={() => navigation.navigate('Home')} />
+                <Button 
+                title='AGENDAR' 
+                style={{ marginTop: '10px',  width: '2600px' }}
+                color='#924DC1' 
+                onPress={() => navigation.navigate('Home')} />
             </View>
         </View>
+       
     )
 
 }

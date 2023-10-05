@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet, KeyboardAvoidingView, Platform, Image, Text, TouchableOpacity } from 'react-native'; 
 
-import icone from '../assets/icon-tcc.png';
+import icone from '../assets/icon-TCC.png';
 
 export default function CadastroScreen() {
   const [nome, setNome] = useState('');
