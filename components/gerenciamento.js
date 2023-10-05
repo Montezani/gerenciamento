@@ -8,6 +8,44 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Gerenciamento = () => {
   const [task, setTask] = useState(['Lab. 1','Lab. 2','Lab. 3','Lab. 4','Lab. 5','Lab. 6','Quadra','Sala de informática','Sala temática','Lab. enfermagem','Lab. farmácia','Lab. prancheta','Áudio visual','Oficina de artes','Lab. materiais','Lab. prancheta 2','Lab. ciências e biologia']); //lista
+  const [task2, setTask2] = useState(
+    [
+      {
+        esp_id: 1, 
+        esp_nome: 'Lab. 1', 
+        esp_capacidade: 20, 
+        esp_disponibilidade: 1, 
+        esp_observacao: "Em frente ao xxxx"
+      },  
+      {
+        esp_id: 2, 
+        esp_nome: 'Lab. 2', 
+        esp_capacidade: 20, 
+        esp_disponibilidade: 0, 
+        esp_observacao: "Atrás do xxxx"
+      },
+      {
+        esp_id: 1, 
+        esp_nome: 'Lab. 1', 
+        esp_capacidade: 20, 
+        esp_disponibilidade: 1, 
+        esp_observacao: "Em frente ao xxxx"
+      },
+      {
+        esp_id: 1, 
+        esp_nome: 'Lab. 1', 
+        esp_capacidade: 20, 
+        esp_disponibilidade: 1, 
+        esp_observacao: "Em frente ao xxxx"
+      },
+      {
+        esp_id: 1, 
+        esp_nome: 'Lab. 1', 
+        esp_capacidade: 20, 
+        esp_disponibilidade: 1, 
+        esp_observacao: "Em frente ao xxxx"
+      },     
+    ]); //lista
   const [newTask, setNewTask] = useState(""); //input add tarefa 
 
   const styles = StyleSheet.create({

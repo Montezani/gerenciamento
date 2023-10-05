@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { View,StyleSheet, KeyboardAvoidingView, Platform, Image, Text, TouchableOpacity } from 'react-native';
 
+import icone from '../assets/icon-tcc.png';
+
 export default function TelaInicio() {
   
- 
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={styles.container}
     >
-     <Image source={require('./assets/icon-tcc.png')} style={styles.logo} />
+     <Image source={icone} style={styles.logo} />
        <Text style={styles.title}>SpaceSync</Text>
 
       <View style={styles.form}>
