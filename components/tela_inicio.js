@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text,StyleSheet, Image } from 'react-native';
 import icone from '../assets/icon-TCC.png';
 
 
@@ -7,13 +7,12 @@ const MinhaPagina = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.titulo}>Minha Página</Text>
-      <View style={styles.conteudo}>
-      <Image source={icone} style={styles.logo} />
+      <Image source={icone}/>
       
 
         <Text>Teste</Text>
       </View>
-    </View>
+    
   );
 };
 
