@@ -15,7 +15,7 @@ const Agendamentos = () => {
     ]);
 
 
-    const [open2, setOpen2] = useState(false);
+    const [open2, setOpen2] = useState(false); 
     const [value2, setValue2] = useState(null);
     const [items2, setItems2] = useState([
         { label: '1°', value: '1°' },

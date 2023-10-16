@@ -30,11 +30,11 @@ function Botoes({ navigation }) {
         onPress={() => navigation.navigate('gerenciamento')}
       />
       <Button
-        title="Tela inicio"
-        onPress={() => navigation.navigate('telainicio')}
+        title="tela_inicio"
+        onPress={() => navigation.navigate('tela_inicio')}
       />
     </View>
   );
 }
 
-export default Botoes
+export default Botoes;

@@ -1,18 +1,14 @@
 import React from 'react'
-
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-
 import Gerenciamento from './components/gerenciamento'
 import Login from './components/login'
 import Calendario from './components/calendario'
 import Cadastro from './components/cadastro'
 import Ambientes from './components/ambientes'
 import Agendamentos from './components/agendamento'
-
 import AcessoTelas from './components/telas'
 import TelaInicio from './components/tela_inicio'
-
 
 const Stack = createNativeStackNavigator();
 
@@ -20,8 +16,7 @@ const Rotas = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="telas">
-
-        <Stack.Screen name='telas' component={AcessoTelas}
+        <Stack.Screen name='telas' component={AcessoTelas} 
           options={{
             headerTitleAlign: 'center',
             headerTitleStyle: {
@@ -30,7 +25,6 @@ const Rotas = () => {
             },
             headerStyle: {
               backgroundColor: '#E1CBEE',
-
             },
           }}
         />
@@ -44,7 +38,6 @@ const Rotas = () => {
             },
             headerStyle: {
               backgroundColor: '#E1CBEE',
-
             },
           }}
         />
@@ -58,7 +51,6 @@ const Rotas = () => {
             },
             headerStyle: {
               backgroundColor: '#E1CBEE',
-
             },
           }}
         />
@@ -72,7 +64,6 @@ const Rotas = () => {
             },
             headerStyle: {
               backgroundColor: '#E1CBEE',
-
             },
           }}
         />
@@ -86,7 +77,6 @@ const Rotas = () => {
             },
             headerStyle: {
               backgroundColor: '#E1CBEE',
-
             },
           }}
         />
@@ -100,7 +90,6 @@ const Rotas = () => {
             },
             headerStyle: {
               backgroundColor: '#E1CBEE',
-
             },
           }}
         />
@@ -114,7 +103,6 @@ const Rotas = () => {
             },
             headerStyle: {
               backgroundColor: '#E1CBEE',
-
             },
           }}
         />
@@ -128,14 +116,12 @@ const Rotas = () => {
             },
             headerStyle: {
               backgroundColor: '#E1CBEE',
-
             },
           }}
         />
-
       </Stack.Navigator>
     </NavigationContainer>
   )
 }
 
-export default Rotas
+export default Rotas;
