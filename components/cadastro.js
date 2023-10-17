@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet, KeyboardAvoidingView, Platform, Image, Text, TouchableOpacity } from 'react-native';
 
-import icone from '../assets/icon-tcc.png';
+import icone from '../assets/icon-TCC.png';
 
 export default function CadastroScreen() {
   const [nome, setNome] = useState('');
@@ -9,19 +9,17 @@ export default function CadastroScreen() {
   const [senha, setSenha] = useState('');
 
   const handleCadastro = () => {
-    // Implemente a lógica de cadastro aqui
-    // Por exemplo, você pode fazer uma chamada à API ou armazenar os dados localmente.
+  
     console.log('Nome:', nome);
     console.log('Email:', email);
     console.log('Senha:', senha);
   };
-
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={styles.container}
     >
-     <Image source={icone} style={styles.logo} />
+    <Image source={icone} style={styles.logo} />
        <Text style={styles.title}>SpaceSync</Text>
 
       <View style={styles.form}>
@@ -65,8 +63,8 @@ const styles = StyleSheet.create({
   },
 
   logo: {
-    width: 150,
-    height: 150,
+    width: 300,
+    height: 300,
   },
 
  title: {
@@ -95,10 +93,11 @@ const styles = StyleSheet.create({
   background: '#924DC1',
   alignSelf: 'center',
   textAlign:'center',
+
   },
   buttonCadastrarText:{
   paddingVertical: 10,
-  color: 'white',
+  color: '#924DC1',
   fontWeight: 'BOLD',
   },
   

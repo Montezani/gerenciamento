@@ -63,8 +63,8 @@ const styles = StyleSheet.create({
   },
 
   logo: {
-    width: 150,
-    height: 150,
+    width: 250,
+    height: 250,
   },
 
  title: {
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
   },
   buttonCadastrarText:{
   paddingVertical: 10,
-  color: 'white',
+  color: '#924DC1',
   fontWeight: 'BOLD',
   },
  buttonEntrar: {
