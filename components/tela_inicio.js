@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
-import icone from './assets/icon-TCC.png';
+import {icone} from '../assets/icon-TCC.png';
 
 const MinhaPagina = () => {
   return (

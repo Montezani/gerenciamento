@@ -26,6 +26,11 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": "JÁ ESTÁ PRONTA (TELA-LUCAS)"
+    "description": "JÁ ESTÁ PRONTA (TELA-LUCAS)",
+    "extra": {
+      "eas": {
+        "projectId": "1a37fc6e-ec2f-4c8d-8093-cdf66c66c4b0"
+      }
+    }
   }
 }

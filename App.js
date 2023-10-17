@@ -6,7 +6,7 @@ import Login from './components/login'
 import Calendario from './components/calendario'
 import Cadastro from './components/cadastro'
 import Ambientes from './components/ambientes'
-import Agendamentos from './components/agendamento'
+import Agendamentos from './components/agendamento1'
 import AcessoTelas from './components/telas'
 import TelaInicio from './components/tela_inicio'
 
