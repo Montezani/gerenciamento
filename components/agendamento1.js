@@ -32,9 +32,9 @@ const Agendamentos = () => {
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <View style={{
                 justifyContent: 'center',
-                alignItems: 'center',
+                alignItems: 'left',
                 padding: '30px',
-                backgroundColor: '#e4ceed',
+                backgroundColor: '#F6EAFB',
                 height: '700px',
                 width: '520px',
                 borderRadius: '40px',
@@ -53,8 +53,9 @@ const Agendamentos = () => {
                 }}>RESPONSÁVEL PELA RESERVA</Text>
 
                 <TextInput style={{
-                    backgroundColor: '#924DC1',
+                    backgroundColor: '#E1CBEE',
                     height: '40px',
+                    borderRadius: '10px',
                     placeholder: 'SELECIONAR'
                 }}>
                 </TextInput>
@@ -77,7 +78,7 @@ const Agendamentos = () => {
                     setValue={setValue}
                     setItems={setItems}
                     placeholder="SELECIONAR"
-                    style={{ backgroundColor: '#E1CBEE', width: '260px', alignSelf: 'center' }}
+                    style={{ backgroundColor: '#E1CBEE', width: '200px', alignSelf: 'left' }}
                 />
 
                 <Text style={{
@@ -97,7 +98,7 @@ const Agendamentos = () => {
                     setValue={setValue2}
                     setItems={setItems2}
                     placeholder="SELECIONAR"
-                    style={{ backgroundColor: '#E1CBEE', width: '260px', alignSelf: 'center' }}
+                    style={{ backgroundColor: '#E1CBEE', width: '200px', alignSelf: 'left' }}
                 />
 
 
@@ -112,8 +113,9 @@ const Agendamentos = () => {
                 }}>CONTEÚDO</Text>
 
                 <TextInput style={{
-                    backgroundColor: '#924DC1',
-                    height: '120px',
+                    backgroundColor: '#E1CBEE',
+                    height: '200px',
+                    borderRadius: '20px',
                     marginBottom: '50px',
                 }}>
                 </TextInput>
