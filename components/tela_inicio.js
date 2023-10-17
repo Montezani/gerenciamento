@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   logo: {
-    width: 100, // Adjust the width and height as needed
+    width: 100, 
     height: 100,
   },
 });
