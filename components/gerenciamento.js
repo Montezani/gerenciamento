@@ -25,7 +25,7 @@ const Gerenciamento = () => {
       flex: 1,
       justifyContent: "center",
       alignItems: "center",
-      padding: 20,
+      margin: '10%'
     },
     addButton: {
       alignItems: "center",

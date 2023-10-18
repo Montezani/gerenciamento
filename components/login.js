@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
   width: '50%',
   height: '20%',
   borderRadius: 20,
-  background: '#924DC1',
+  
   alignSelf: 'center',
   textAlign:'center',
   },
