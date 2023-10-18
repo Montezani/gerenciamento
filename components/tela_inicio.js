@@ -8,7 +8,7 @@ const MinhaPagina = () => {
   return (
     <View style={styles.container}>
       
-      <View style={styles.logo}>
+      <View>
       <Image source={icone} style={styles.logo} />
       </View>
 
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   titulo: {
     fontSize: 30,
     fontWeight: 'bold',
-    margin:-45,
+    margin:-40,
     padding: -20,
    
   },
@@ -42,7 +42,11 @@ const styles = StyleSheet.create({
     width: 300, 
     height:300,
     shadowColor: 'black',
-    sha
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
+   
+    
   },
 
   botao: {
@@ -54,6 +58,8 @@ const styles = StyleSheet.create({
   width: 110,
   textAlign: 'center',
   padding: 8,
+  color: 'white',
+  fontWeight:'500',
 
   },
 });
