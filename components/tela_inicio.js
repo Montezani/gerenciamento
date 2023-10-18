@@ -8,15 +8,15 @@ const MinhaPagina = () => {
   return (
     <View style={styles.container}>
       
-      <View style={styles.logo}>
+      <View>
       <Image source={icone} style={styles.logo} />
       </View>
 
-      <View style={styles.titulo}>
+      <View>
       <Text style={styles.titulo}>SpaceSync</Text>
       </View>
 
-      <TouchableOpacity style={styles.botao} >
+      <TouchableOpacity>
       <Text style={styles.botao}>START</Text>
       </TouchableOpacity>
 
@@ -34,19 +34,32 @@ const styles = StyleSheet.create({
   titulo: {
     fontSize: 30,
     fontWeight: 'bold',
-    margin:-15,
-    padding: 20,
+    margin:-40,
+    padding: -20,
    
   },
   logo: {
-    width: 200, 
-    height:200,
+    width: 300, 
+    height:300,
+    shadowColor: 'black',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
+   
+    
   },
 
   botao: {
-  fontSize:20,
-  padding: 20,
-
+  marginTop:50,
+  fontSize:15,
+  backgroundColor:'#924DC1',
+  borderRadius: 20,
+  height: 40,
+  width: 110,
+  textAlign: 'center',
+  padding: 8,
+  color: 'white',
+  fontWeight:'500',
 
   },
 });
