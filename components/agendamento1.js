@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Button, TextInput } from 'react-native'
+import { View, Text, Button, TextInput, StyleSheet } from 'react-native'
 import DropDownPicker from 'react-native-dropdown-picker';
 
 const Agendamentos = () => {
@@ -117,19 +117,26 @@ const Agendamentos = () => {
                     height: '200px',
                     borderRadius: '20px',
                     marginBottom: '50px',
+                    
                 }}>
                 </TextInput>
+               
 
                 <Button 
                 title='AGENDAR' 
-                style={{ marginTop: '10px',  width: '2600px' }}
+                style={{ marginTop: '10px',   borderRadius:'90%' }}
                 color='#924DC1' 
                 onPress={() => navigation.navigate('Home')} />
             </View>
+
+            
         </View>
+
+
        
     )
 
 }
 
+  
 export default Agendamentos
