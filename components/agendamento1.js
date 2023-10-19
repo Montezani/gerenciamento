@@ -26,21 +26,20 @@ const Agendamentos = () => {
 
 
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <View style={{  flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <View style={{
                 justifyContent: 'center',
                 alignItems: 'center',
-                padding: 20,
+                padding: 30,
                 backgroundColor: '#F6EAFB',
-                height: '70%',
-                width: '50%',
-                borderRadius: 10,
+                height: 600,
+                width: 370,
+                borderRadius: 50,
                
             }}>
 
                 <Text style={{
-                    textAlign: 'left',
-                    textAlign: 'left',
+                    textAlign: 'center',
                     fontWeight: 'bold',
                     marginBottom: 10,
                 }}>RESPONSÁVEL PELA RESERVA</Text>
@@ -55,7 +54,7 @@ const Agendamentos = () => {
                 </TextInput>
 
                 <Text style={{
-                     textAlign: 'left',
+                     textAlign: 'center',
                      fontWeight: 'bold',
                      marginBottom: 10,
 
@@ -69,12 +68,13 @@ const Agendamentos = () => {
                     setValue={setValue}
                     setItems={setItems}
                     placeholder="SELECIONAR"
-                    style={{ backgroundColor: '#E1CBEE', width: '90%', alignSelf: 'center' }}
+                    placeholderStyle={{ fontWeight: 'bold' }}
+                    style={{ backgroundColor: '#E1CBEE', width: '90%', alignSelf: 'center', borderWidth: 0,  borderColor: 'transparent', }}
                   containerStyle={{ width: '100%' }}
                     itemStyle={{ justifyContent: 'flex-start' }}
 /> 
                 <Text style={{
-                     textAlign: 'left',
+                     textAlign: 'center',
                      fontWeight: 'bold',
                      marginBottom: 10,
                 }}>MÓDULO</Text>
@@ -87,7 +87,8 @@ const Agendamentos = () => {
                     setValue={setValue2}
                     setItems={setItems2}
                     placeholder="SELECIONAR"
-                    style={{ backgroundColor: '#E1CBEE', width: '90%', alignSelf: 'center' }}
+                    placeholderStyle={{ fontWeight: 'bold' }}
+                    style={{ backgroundColor: '#E1CBEE', width: '90%', alignSelf: 'center', borderWidth: 0,  borderColor: 'transparent', }}
                     containerStyle={{ width: '100%' }}
                     itemStyle={{ justifyContent: 'flex-start' }}
                 />
@@ -95,7 +96,7 @@ const Agendamentos = () => {
 
                 <Text style={{
 
-                    textAlign: 'left',
+                    textAlign: 'center',
                     fontWeight: 'bold',
                     marginBottom: 10,
                 }}>CONTEÚDO</Text>
@@ -112,7 +113,7 @@ const Agendamentos = () => {
 
                 <Button 
                 title='AGENDAR' 
-                style={{ marginTop: '10%',   borderRadius: 90 }}
+                style={{ marginTop: '10%', borderRadius: 90,}}
                 color='#924DC1' 
                 onPress={() => navigation.navigate('Home')} />
             </View>
