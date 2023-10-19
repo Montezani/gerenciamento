@@ -9,13 +9,22 @@ const MinhaPagina = () => {
       <View style={styles.logoContainer}>
       </View>
 
+      
+      <View style={styles.circuloLine1} />
       <View style={styles.circulo} />
+      
+      <View style={styles.circuloLine2} />
       <View style={styles.circuloTop} />
-      <Image source={icone} style={styles.logo} />
 
-      <TouchableOpacity>
-        <Text style={styles.titulo}>SpaceSync</Text>
-        <Text style={styles.botao}>START</Text>
+      
+      
+
+      <Image source={icone} style={styles.logo} />
+      
+      <Text style={styles.titulo}>SpaceSync</Text>
+      
+      <TouchableOpacity> 
+      <Text style={styles.botao}>START</Text>
       </TouchableOpacity>
 
     </View>
@@ -50,7 +59,6 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
   },
   botao: {
-    position: 'absolute',
     marginTop: 60,
     fontSize: 15,
     backgroundColor: 'black',
@@ -60,7 +68,8 @@ const styles = StyleSheet.create({
     textAlign: 'center', 
     color: 'white',
     fontWeight: '500',
-    marginLeft: 15,
+    background: 'linear-gradient(to right, #924DC1, #FFA500)',
+    
     padding: 8,
   },
   circulo: {
@@ -69,8 +78,22 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
     position: 'absolute',
-    bottom: 3,
-    right: 8,
+    bottom: -3,
+    right: -4,
+    borderTopLeftRadius: '300%',
+    
+  },
+
+  circuloLine1: {
+    backgroundColor: 'white',
+    borderColor: '#924DC1',
+    borderWidth: '2px',
+    aspectRatio: 1,
+    width: 250,
+    height: 250,
+    position: 'absolute',
+    bottom: -5,
+    right: -3,
     borderTopLeftRadius: '300%',
     
   },
@@ -85,6 +108,21 @@ const styles = StyleSheet.create({
     left: 0,
     borderBottomRightRadius: '100%',
   },
+
+  circuloLine2: {
+    backgroundColor: 'white',
+    borderColor: '#924DC1',
+    borderWidth: '2px',
+    aspectRatio: 1,
+    width: 250,
+    height: 250,
+    position: 'absolute',
+    top: -2,
+    left: -4,
+    borderBottomRightRadius: '100%',
+    
+  },
+
 });
 
 export default MinhaPagina;
