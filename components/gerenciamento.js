@@ -14,18 +14,23 @@ import { AntDesign, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-i
 
 const Gerenciamento = () => {
   const [tasks, setTasks] = useState([
-    'Lab. 1', 'Lab. 2', 'Lab. 3', 'Lab. 4', 'Lab. 5', 'Lab. 6', 'Quadra',
-    'Sala de informática', 'Sala temática', 'Lab. enfermagem', 'Lab. farmácia',
-    'Lab. prancheta', 'Áudio visual', 'Oficina de artes', 'Lab. materiais',
-    'Lab. prancheta 2', 'Lab. ciências e biologia'
+    'Áudio visual', 'Lab. 1', 'Lab. 2', 'Lab. 3', 'Lab. 4', 'Lab. 5', 'Lab. 6', 'Lab. ciências e biologia', 'Lab. enfermagem',
+     'Lab. farmácia', 'Lab. materiais', 'Lab. prancheta', 'Lab. prancheta 2', 'Oficina de artes', 'Quadra', 'Sala de informática',
+      'Sala temática'
   ]);
+
 
   const styles = StyleSheet.create({
     container: {
       flex: 1,
       justifyContent: "center",
       alignItems: "center",
-      margin: '10%'
+      margin: '5%'
+    },
+    addButtonContainer: {
+      position: 'absolute',
+      bottom: 10, 
+      right: 10, 
     },
     addButton: {
       alignItems: "center",
@@ -37,7 +42,7 @@ const Gerenciamento = () => {
       marginTop: 10,
     },
     taskContainer: {
-      width: '90%',
+      width: '100%',
       marginVertical: 10,
       padding: 20,
       borderRadius: 10,
@@ -85,15 +90,18 @@ const Gerenciamento = () => {
       style={styles.container}
     >
       <FlatList
-        style={{ width: '100%' }}
+        style={{ width: '90%' }}
         data={tasks}
         keyExtractor={(item, index) => index.toString()}
         renderItem={renderTask}
         showsVerticalScrollIndicator={false}
       />
-      <TouchableOpacity style={styles.addButton}>
-        <AntDesign name="plus" size={24} color="white" />
-      </TouchableOpacity>
+
+      <View style={styles.addButtonContainer}>
+        <TouchableOpacity style={styles.addButton}>
+          <AntDesign name="plus" size={24} color="white" />
+        </TouchableOpacity>
+      </View>
     </KeyboardAvoidingView>
   );
 };
