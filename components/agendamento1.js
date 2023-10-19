@@ -26,47 +26,38 @@ const Agendamentos = () => {
 
 
     return (
-       
-
-
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <View style={{
                 justifyContent: 'center',
-                alignItems: 'left',
-                padding: '30px',
+                alignItems: 'center',
+                padding: 20,
                 backgroundColor: '#F6EAFB',
-                height: '700px',
-                width: '520px',
-                borderRadius: '40px',
+                height: '70%',
+                width: '50%',
+                borderRadius: 10,
                
             }}>
 
-
-
                 <Text style={{
                     textAlign: 'left',
-                    width: 'auto',
-                    height: '40px',
-                    borderRadius: '50px',
+                    textAlign: 'left',
                     fontWeight: 'bold',
-                    marginBottom: '20px',
+                    marginBottom: 10,
                 }}>RESPONSÁVEL PELA RESERVA</Text>
 
                 <TextInput style={{
                     backgroundColor: '#E1CBEE',
-                    height: '40px',
-                    borderRadius: '10px',
-                    placeholder: 'SELECIONAR'
+                    height: 40,
+                    borderRadius: 9,
+                    placeholder: 'SELECIONAR',
+                    marginBottom: 10,
                 }}>
                 </TextInput>
 
                 <Text style={{
-                    textAlign: 'left',
-                    width: 'auto',
-                    height: '49px',
-                    borderRadius: '50px',
-                    fontWeight: 'bold',
-                    marginBottom: '20px',
+                     textAlign: 'left',
+                     fontWeight: 'bold',
+                     marginBottom: 10,
 
                 }}>CURSO</Text>
 
@@ -78,16 +69,14 @@ const Agendamentos = () => {
                     setValue={setValue}
                     setItems={setItems}
                     placeholder="SELECIONAR"
-                    style={{ backgroundColor: '#E1CBEE', width: '200px', alignSelf: 'left' }}
-                />
-
+                    style={{ backgroundColor: '#E1CBEE', width: '90%', alignSelf: 'center' }}
+                  containerStyle={{ width: '100%' }}
+                    itemStyle={{ justifyContent: 'flex-start' }}
+/> 
                 <Text style={{
-                    textAlign: 'left',
-                    width: '146px',
-                    height: '40px',
-                    borderRadius: '50px',
-                    fontWeight: 'bold',
-                    marginBottom: '20px',
+                     textAlign: 'left',
+                     fontWeight: 'bold',
+                     marginBottom: 10,
                 }}>MÓDULO</Text>
 
                 <DropDownPicker
@@ -98,25 +87,24 @@ const Agendamentos = () => {
                     setValue={setValue2}
                     setItems={setItems2}
                     placeholder="SELECIONAR"
-                    style={{ backgroundColor: '#E1CBEE', width: '200px', alignSelf: 'left' }}
+                    style={{ backgroundColor: '#E1CBEE', width: '90%', alignSelf: 'center' }}
+                    containerStyle={{ width: '100%' }}
+                    itemStyle={{ justifyContent: 'flex-start' }}
                 />
 
 
                 <Text style={{
 
-                    textAlign: 'letf',
-                    width: '146px',
-                    height: '15px',
-                    borderRadius: '50px',
+                    textAlign: 'left',
                     fontWeight: 'bold',
-                    marginBottom: '10px',
+                    marginBottom: 10,
                 }}>CONTEÚDO</Text>
 
                 <TextInput style={{
                     backgroundColor: '#E1CBEE',
-                    height: '200px',
-                    borderRadius: '20px',
-                    marginBottom: '50px',
+                    height: 60,
+                    borderRadius: 9,
+                    marginBottom:10,
                     
                 }}>
                 </TextInput>
@@ -124,7 +112,7 @@ const Agendamentos = () => {
 
                 <Button 
                 title='AGENDAR' 
-                style={{ marginTop: '10px',   borderRadius:'90%' }}
+                style={{ marginTop: '10%',   borderRadius: 90 }}
                 color='#924DC1' 
                 onPress={() => navigation.navigate('Home')} />
             </View>
