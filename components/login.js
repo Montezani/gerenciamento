@@ -65,6 +65,10 @@ const styles = StyleSheet.create({
   logo: {
     width: 250,
     height: 250,
+    shadowColor: 'black',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
   },
 
  title: {
@@ -90,20 +94,21 @@ const styles = StyleSheet.create({
   width: '50%',
   height: '20%',
   borderRadius: 20,
-  
+  backgroundColor:'#924DC1',
   alignSelf: 'center',
   textAlign:'center',
+ 
   },
   buttonCadastrarText:{
   paddingVertical: 10,
-  color: '#924DC1',
+   color: 'white',
   fontWeight: 'BOLD',
   },
  buttonEntrar: {
   width: '50%',
   height: '20%',
   borderRadius: 20,
-  background: '#924DC1',
+  backgroundColor:'#924DC1',
   alignSelf: 'center',
   textAlign:'center',
   marginBottom: 10

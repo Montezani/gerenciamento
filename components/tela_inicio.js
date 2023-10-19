@@ -4,6 +4,7 @@ import icone from '../assets/icon-TCC.png';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const MinhaPagina = () => {
+ 
   return (
     <View style={styles.container}>
       <View style={styles.logoContainer}>
@@ -23,7 +24,7 @@ const MinhaPagina = () => {
       
       <Text style={styles.titulo}>SpaceSync</Text>
       
-      <TouchableOpacity> 
+      <TouchableOpacity  onPress={() => navigation.navigate('login')}> 
       <Text style={styles.botao}>START</Text>
       </TouchableOpacity>
 
