@@ -24,7 +24,7 @@ const MinhaPagina = () => {
       
       <Text style={styles.titulo}>SpaceSync</Text>
       
-      <TouchableOpacity  onPress={() => navigation.navigate('login')}> 
+      <TouchableOpacity> 
       <Text style={styles.botao}>START</Text>
       </TouchableOpacity>
 
