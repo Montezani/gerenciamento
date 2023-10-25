@@ -9,6 +9,7 @@ import Ambientes from './components/ambientes'
 import Agendamentos from './components/agendamento1'
 import AcessoTelas from './components/telas'
 import TelaInicio from './components/tela_inicio'
+import Welcome from './components/welcome'
 
 const Stack = createNativeStackNavigator();
 
@@ -108,6 +109,20 @@ const Rotas = () => {
         />
 
         <Stack.Screen name='tela_inicio' component={TelaInicio}
+          options={{
+            headerTitleAlign: 'center',
+            headerTitleStyle: {
+              fontSize: 20,
+              fontWeight: 'bold',
+            },
+            headerStyle: {
+              backgroundColor: '#E1CBEE',
+            },
+
+            
+          }}
+        />
+         <Stack.Screen name='welcome' component={Welcome}
           options={{
             headerTitleAlign: 'center',
             headerTitleStyle: {
