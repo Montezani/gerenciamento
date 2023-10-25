@@ -10,6 +10,7 @@ import Agendamentos from './components/agendamento1'
 import AcessoTelas from './components/telas'
 import TelaInicio from './components/tela_inicio'
 import Welcome from './components/welcome'
+import Ver from './components/ver_ambientes'
 
 const Stack = createNativeStackNavigator();
 
@@ -136,6 +137,21 @@ const Rotas = () => {
             
           }}
         />
+       <Stack.Screen name='ver_ambientes' component={Ver}
+          options={{
+            headerTitleAlign: 'center',
+            headerTitleStyle: {
+              fontSize: 20,
+              fontWeight: 'bold',
+            },
+            headerStyle: {
+              backgroundColor: '#E1CBEE',
+            },
+
+            
+          }}
+        />
+        
       </Stack.Navigator>
 
       
