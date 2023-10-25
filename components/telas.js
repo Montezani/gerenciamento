@@ -37,6 +37,11 @@ function Botoes({ navigation }) {
         title="welcome"
         onPress={() => navigation.navigate('welcome')}
       />
+      <Button
+        title="ver_ambientes"
+        onPress={() => navigation.navigate('ver_ambientes')}
+      />
+
     </View>
   );
 }
