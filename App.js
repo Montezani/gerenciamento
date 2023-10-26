@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import Gerenciamento from './components/gerenciamento'
+import Gerenciamento from './components/GERENCIAMENTO'
 import Login from './components/login'
 import Calendario from './components/calendario'
 import Cadastro from './components/cadastro'
@@ -30,7 +30,7 @@ const Rotas = () => {
             },
           }}
         />
-        <Stack.Screen name='gerenciamento' component={Gerenciamento}
+        <Stack.Screen name='GERENCIAMENTO' component={Gerenciamento}
           options={{
             headerTitleAlign: 'center',
             headerTitleStyle: {
