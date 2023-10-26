@@ -38,20 +38,7 @@ const Agendamentos = () => {
                
             }}>
 
-                <Text style={{
-                    textAlign: 'center',
-                    fontWeight: 'bold',
-                    marginBottom: 10,
-                }}>RESPONSÁVEL PELA RESERVA</Text>
-
-                <TextInput style={{
-                    backgroundColor: '#E1CBEE',
-                    height: 40,
-                    borderRadius: 9,
-                    placeholder: 'SELECIONAR',
-                    marginBottom: 10,
-                }}>
-                </TextInput>
+                
 
                 <Text style={{
                      textAlign: 'center',
@@ -73,7 +60,42 @@ const Agendamentos = () => {
                   containerStyle={{ width: '100%' }}
                     itemStyle={{ justifyContent: 'flex-start' }}
 /> 
-                <Text style={{
+<Text style={{
+                    textAlign: 'center',
+                    fontWeight: 'bold',
+                    marginBottom: 10,
+                    marginTop: 10
+                }}>RESPONSÁVEL PELA RESERVA</Text>
+
+                <TextInput style={{
+                    backgroundColor: '#E1CBEE',
+                    height: 40,
+                    borderRadius: 9,
+                    placeholder: 'SELECIONAR',
+                    marginBottom: 10,
+                   
+                    
+                }}>
+                </TextInput>   
+
+<Text style={{
+
+textAlign: 'center',
+fontWeight: 'bold',
+marginBottom: 10,
+}}>CONTEÚDO</Text>
+
+<TextInput style={{
+backgroundColor: '#E1CBEE',
+height: 60,
+borderRadius: 9,
+marginBottom:10,
+
+}}>
+</TextInput>
+
+
+<Text style={{
                      textAlign: 'center',
                      fontWeight: 'bold',
                      marginBottom: 10,
@@ -88,34 +110,16 @@ const Agendamentos = () => {
                     setItems={setItems2}
                     placeholder="SELECIONAR"
                     placeholderStyle={{ fontWeight: 'bold' }}
-                    style={{ backgroundColor: '#E1CBEE', width: '90%', alignSelf: 'center', borderWidth: 0,  borderColor: 'transparent', }}
+                    style={{ backgroundColor: '#E1CBEE', width: '90%', alignSelf: 'center', borderWidth: 0,  borderColor: 'transparent', marginBottom: 20 }}
                     containerStyle={{ width: '100%' }}
                     itemStyle={{ justifyContent: 'flex-start' }}
                 />
 
-
-                <Text style={{
-
-                    textAlign: 'center',
-                    fontWeight: 'bold',
-                    marginBottom: 10,
-                }}>CONTEÚDO</Text>
-
-                <TextInput style={{
-                    backgroundColor: '#E1CBEE',
-                    height: 60,
-                    borderRadius: 9,
-                    marginBottom:10,
-                    
-                }}>
-                </TextInput>
-               
-
                 <Button 
                 title='AGENDAR' 
-                style={{ marginTop: '10%', borderRadius: 90,}}
                 color='#924DC1' 
                 onPress={() => navigation.navigate('Home')} />
+            
             </View>
 
             
