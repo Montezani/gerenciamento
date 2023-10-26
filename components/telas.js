@@ -7,11 +7,11 @@ function Botoes({ navigation }) {
       <Text>Botões</Text>
       <Button
         title="agendamentos"
-        onPress={() => navigation.navigate('agendamentos')}
+        onPress={() => navigation.navigate('AGENDAMENTOS')}
       />
       <Button
-        title="AMBIENTES"
-        onPress={() => navigation.navigate('ambientes')}
+        title="ambientes"
+        onPress={() => navigation.navigate('AMBIENTES')}
       />
       <Button
         title="cadastro"
@@ -39,7 +39,7 @@ function Botoes({ navigation }) {
       />
       <Button
         title="ver_ambientes"
-        onPress={() => navigation.navigate('ver_ambientes')}
+        onPress={() => navigation.navigate('VER AMBIENTES')}
       />
 
     </View>

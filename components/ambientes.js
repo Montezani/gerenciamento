@@ -28,7 +28,7 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
-        <Text style={styles.ambientes}>SELECIONAR AMBIENTE</Text>
+        <Text style={styles.ambientes}>SELECIONAR AMBIENTE:</Text>
         {roomData.map((room) => (
           <View
             key={room.id}
@@ -117,7 +117,8 @@ const styles = StyleSheet.create({
     position: 'relative',
     fontWeight: 'bold',
     marginBottom: 45,
-    fontSize: 25,
+    fontSize: 20,
+    right: '12%'
   },
 });
 

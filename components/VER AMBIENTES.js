@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
 
-import { AntDesign } from '@expo/vector-icons'; // Importe os ícones AntDesign
+
 
 const App = () => {
-  const [lab4Occupied, setLab4Occupied] = useState(true); // Defina como "true" para manter LAB 4 ocupado
+  const [lab4Occupied, setLab4Occupied] = useState(true); 
   const [lab5Occupied, setLab5Occupied] = useState(false);
   const [lab6Occupied, setLab6Occupied] = useState(false);
   const [quadraOccupied, setQuadraOccupied] = useState(false);
@@ -12,7 +12,7 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
-        <Text style={styles.ambientes}>AMBIENTES</Text>
+        
 
         <View
           style={[
