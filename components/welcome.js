@@ -33,6 +33,7 @@ const App = () => {
       <View style={styles.content}>
         <Text style={styles.ambientes}>BEM VINDO, USUARIO!</Text>
 
+
         <View
           style={[
             styles.placeholder,
@@ -161,6 +162,11 @@ const App = () => {
   );
 };
 
+
+
+
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -214,6 +220,8 @@ const styles = StyleSheet.create({
     marginBottom: 45,
     fontSize: 25,
   },
+
+  
 });
 
 export default App;
