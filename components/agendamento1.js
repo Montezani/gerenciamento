@@ -78,24 +78,24 @@ const Agendamentos = () => {
                 }}>
                 </TextInput>   
 
-<Text style={{
-
-textAlign: 'center',
-fontWeight: 'bold',
-marginBottom: 10,
-}}>CONTEÚDO</Text>
-
-<TextInput style={{
-backgroundColor: '#E1CBEE',
-height: 60,
-borderRadius: 9,
-marginBottom:10,
-
-}}>
-</TextInput>
-
-
-<Text style={{
+                 <Text style={{
+                 
+                 textAlign: 'center',
+                 fontWeight: 'bold',
+                 marginBottom: 10,
+                 }}>CONTEÚDO</Text>
+                 
+                 <TextInput style={{
+                 backgroundColor: '#E1CBEE',
+                 height: 60,
+                 borderRadius: 9,
+                 marginBottom:10,
+                 
+                 }}>
+                 </TextInput>
+                 
+                 
+                 <Text style={{
                      textAlign: 'center',
                      fontWeight: 'bold',
                      marginBottom: 10,

@@ -154,24 +154,34 @@ const App = () => {
             </TouchableOpacity>
           </View>
           <Text style={styles.availabilityText}>
+
             Disponibilidade: {quadraOccupied ? 'Ocupado' : 'Livre'}
+
+            
           </Text>
-        </View>
-      </View>
-    </SafeAreaView>
-  );
+
+          </View>
+
+{/* Contêiner para os botões */}
+<View style={styles.buttonContainer}>
+  <TouchableOpacity style={styles.button} >
+    <Text style={styles.button1}>novo agendamento</Text>
+  </TouchableOpacity>
+  <TouchableOpacity style={styles.button} >
+    <Text style={styles.button2}>ver ambientes</Text>
+  </TouchableOpacity>
+</View>
+</View>
+</SafeAreaView>
+);
 };
-
-
-
-
-
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'flex-start',
+     
   },
 
   titleOccupied: {
@@ -180,7 +190,7 @@ const styles = StyleSheet.create({
 
   content: {
     alignItems: 'center',
-    width: '50%',
+    width: '90%',
   },
 
   placeholder: {
@@ -188,7 +198,7 @@ const styles = StyleSheet.create({
     padding: 12,
     width: '90%',
     borderRadius: 20,
-    margin: 30,
+    margin: 10,
   },
 
   title: {
@@ -220,7 +230,39 @@ const styles = StyleSheet.create({
     marginBottom: 45,
     fontSize: 25,
   },
+  buttonContainer: {
+    flexDirection: 'column', // Coloca os botões lado a lado
+    alignItems: 'center',
+    
+  },  
+button1:{
+  backgroundColor: '#924DC1',
+  padding: 15,
+  width: '100%',
+  fontWeight: 'bold',
+  marginTop: 40,
+  borderRadius: 15,
+  marginBottom: 20,
+  alignItems: 'flex-start', 
+  color:'white',
+  borderWidth: 0,
 
+},
+
+button2:{
+  backgroundColor: '#924DC1',
+  padding: 15,
+  fontWeight: 'bold',
+  marginTop: 40,
+  width: '100%',
+  borderRadius: 15,
+  marginBottom: 20,
+  alignItems: 'flex-start', 
+  color:'white',
+  borderWidth: 0,
+  
+  
+},
   
 });
 
