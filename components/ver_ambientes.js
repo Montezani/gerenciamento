@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const Verambientes= () => {
+const Ver= () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Olá, mundo!</Text>
+      <Text style={styles.text}>AMBIENTES DISPONÍVEIS</Text>
     </View>
   );
 };
@@ -20,4 +20,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Verambientes;
+export default Ver;
