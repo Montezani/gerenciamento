@@ -31,13 +31,13 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
-        <Text style={styles.ambientes}>BEM VINDO, USUARIO!</Text>
+        <Text style={styles.ambientes}>BEM VINDO, USUÁRIO!</Text>
 
 
         <View
           style={[
             styles.placeholder,
-            lab4Occupied && { backgroundColor: '#A167C9' }, // Altere a cor para vermelho se ocupado
+            lab4Occupied && { backgroundColor: '#A167C9', }, // Altere a cor para vermelho se ocupado
           ]}
         >
           <View style={styles.horizontalContainer}>
@@ -51,18 +51,15 @@ const App = () => {
             </Text>
             <TouchableOpacity
               style={styles.checkbox}
-              onPress={() => handleCheckboxChange('lab4')}
+             
             >
-              <AntDesign
-                name={lab4Occupied ? 'checkcircle' : 'checkcircleo'}
-                size={30}
-                color={lab4Occupied ? 'white' : '#A167C9'} // Cor do ícone
-              />
+  
+              <AntDesign name="delete" size={24} color="black" />
+
+
             </TouchableOpacity>
           </View>
-          <Text style={styles.availabilityText}>
-            Disponibilidade: {lab4Occupied ? 'Ocupado' : 'Livre'}
-          </Text>
+          
         </View>
 
         <View
@@ -82,18 +79,14 @@ const App = () => {
             </Text>
             <TouchableOpacity
               style={styles.checkbox}
-              onPress={() => handleCheckboxChange('lab5')}
+              
             >
-              <AntDesign
-                name={lab5Occupied ? 'checkcircle' : 'checkcircleo'}
-                size={30}
-                color={lab5Occupied ? 'white' : '#A167C9'} // Cor do ícone
-              />
+              <AntDesign name="delete" size={24} color="black" />
+
+
             </TouchableOpacity>
           </View>
-          <Text style={styles.availabilityText}>
-            Disponibilidade: {lab5Occupied ? 'Ocupado' : 'Livre'}
-          </Text>
+          
         </View>
 
         <View
@@ -113,18 +106,13 @@ const App = () => {
             </Text>
             <TouchableOpacity
               style={styles.checkbox}
-              onPress={() => handleCheckboxChange('lab6')}
+             
             >
-              <AntDesign
-                name={lab6Occupied ? 'checkcircle' : 'checkcircleo'}
-                size={30}
-                color={lab6Occupied ? 'white' : '#A167C9'} // Cor do ícone
-              />
+             <AntDesign name="delete" size={24} color="black" />
+
             </TouchableOpacity>
           </View>
-          <Text style={styles.availabilityText}>
-            Disponibilidade: {lab6Occupied ? 'Ocupado' : 'Livre'}
-          </Text>
+         
         </View>
 
         <View
@@ -144,31 +132,23 @@ const App = () => {
             </Text>
             <TouchableOpacity
               style={styles.checkbox}
-              onPress={() => handleCheckboxChange('quadra')}
+             
             >
-              <AntDesign
-                name={quadraOccupied ? 'checkcircle' : 'checkcircleo'}
-                size={30}
-                color={quadraOccupied ? 'white' : '#A167C9'} // Cor do ícone
-              />
+             <AntDesign name="delete" size={24} color="black" />
+             
             </TouchableOpacity>
           </View>
-          <Text style={styles.availabilityText}>
-
-            Disponibilidade: {quadraOccupied ? 'Ocupado' : 'Livre'}
-
-            
-          </Text>
+         
 
           </View>
 
 {/* Contêiner para os botões */}
 <View style={styles.buttonContainer}>
   <TouchableOpacity style={styles.button} >
-    <Text style={styles.button1}>novo agendamento</Text>
+    <Text style={styles.button1}>NOVO AGENDAMENTO</Text>
   </TouchableOpacity>
   <TouchableOpacity style={styles.button} >
-    <Text style={styles.button2}>ver ambientes</Text>
+    <Text style={styles.button2}>VEM AMBIENTES</Text>
   </TouchableOpacity>
 </View>
 </View>
@@ -218,8 +198,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   checkbox: {
-    width: 25, // Largura ajustada para o ícone do círculo de seleção
-    height: 0, // Altura ajustada para o ícone do círculo de seleção
+    
   },
   roundCheckbox: {
     borderRadius: 1, // Tornar a caixa de seleção redonda
@@ -235,12 +214,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     
   },  
+
+  
 button1:{
   backgroundColor: '#924DC1',
   padding: 15,
   width: '100%',
   fontWeight: 'bold',
-  marginTop: 40,
+  marginTop: 150,
   borderRadius: 15,
   marginBottom: 20,
   alignItems: 'flex-start', 
@@ -253,7 +234,7 @@ button2:{
   backgroundColor: '#924DC1',
   padding: 15,
   fontWeight: 'bold',
-  marginTop: 40,
+  marginTop: 20,
   width: '100%',
   borderRadius: 15,
   marginBottom: 20,

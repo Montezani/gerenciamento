@@ -132,6 +132,7 @@ const Rotas = () => {
             headerTitleStyle: {
               fontSize: 20,
               fontWeight: 'bold',
+              color:'#E1CBEE'
             },
             headerStyle: {
               backgroundColor: '#E1CBEE',
