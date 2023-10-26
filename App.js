@@ -147,7 +147,6 @@ const Rotas = () => {
             headerStyle: {
               backgroundColor: '#E1CBEE',
             },
-
             
           }}
         />
