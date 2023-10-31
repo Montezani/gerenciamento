@@ -118,7 +118,7 @@ const Agendamentos = () => {
                 <Button 
                 title='AGENDAR' 
                 color='#924DC1' 
-                onPress={() => navigation.navigate('Home')} />
+                onPress={() => navigation.navigate('calendario')} />
             
             </View>
 
