@@ -8,7 +8,7 @@ const App = ({navigation}) => {
   const [lab5Occupied, setLab5Occupied] = useState(false);
   const [lab6Occupied, setLab6Occupied] = useState(false);
   const [quadraOccupied, setQuadraOccupied] = useState(false);
-
+  
   const handleCheckboxChange = (target) => {
     switch (target) {
       case 'lab4':
@@ -144,7 +144,7 @@ const App = ({navigation}) => {
 
 {/* Contêiner para os botões */}
 <View style={styles.buttonContainer}>
-  <TouchableOpacity style={styles.button} >
+  <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('calendario')}>
     <Text style={styles.button1}>NOVO AGENDAMENTO</Text>
   </TouchableOpacity>
   <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('VER AMBIENTES')}>
