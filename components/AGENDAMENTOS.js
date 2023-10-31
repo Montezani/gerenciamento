@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, Button, TextInput, StyleSheet } from 'react-native'
 import DropDownPicker from 'react-native-dropdown-picker';
 
-const Agendamentos = () => {
+const Agendamentos = ({navigation}) => {
 
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState(null);
