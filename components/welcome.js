@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-na
 
 import { AntDesign } from '@expo/vector-icons'; // Importe os ícones AntDesign
 
-const App = () => {
+const App = ({navigation}) => {
   const [lab4Occupied, setLab4Occupied] = useState(false);
   const [lab5Occupied, setLab5Occupied] = useState(false);
   const [lab6Occupied, setLab6Occupied] = useState(false);
@@ -147,7 +147,7 @@ const App = () => {
   <TouchableOpacity style={styles.button} >
     <Text style={styles.button1}>NOVO AGENDAMENTO</Text>
   </TouchableOpacity>
-  <TouchableOpacity style={styles.button} >
+  <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('VER AMBIENTES')}>
     <Text style={styles.button2}>VEM AMBIENTES</Text>
   </TouchableOpacity>
 </View>

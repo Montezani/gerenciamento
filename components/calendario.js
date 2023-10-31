@@ -14,7 +14,7 @@ LocaleConfig.locales['pt-br'] = {
 };
 LocaleConfig.defaultLocale = 'pt-br';
 
-const CalendarScreen = () => {
+const CalendarScreen = ({navigation}) => {
   const [selectedDate, setSelectedDate] = useState('');
 
   const onDayPress = (day) => {
@@ -22,7 +22,8 @@ const CalendarScreen = () => {
   };
 
   const handleProcurarPress = () => {
-    // Implemente a lógica para lidar com o botão "Procurar" aqui
+    navigation.navigate('welcome')
+    console.log('asd')
   };
 
   return (

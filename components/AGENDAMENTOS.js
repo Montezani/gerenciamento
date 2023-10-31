@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, Button, TextInput, StyleSheet } from 'react-native'
 import DropDownPicker from 'react-native-dropdown-picker';
 
-const Agendamentos = () => {
+const Agendamentos = ({navigation}) => {
 
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState(null);
@@ -118,7 +118,7 @@ const Agendamentos = () => {
                 <Button 
                 title='AGENDAR' 
                 color='#924DC1' 
-                onPress={() => navigation.navigate('Home')} />
+                onPress={() => navigation.navigate('calendario')} />
             
             </View>
 

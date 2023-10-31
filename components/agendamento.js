@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, Button, TextInput } from 'react-native'
 import DropDownPicker from 'react-native-dropdown-picker';
 
-const Agendamentos = () => {
+const Agendamentos = ({navigation}) => {
 
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState(null);
@@ -121,7 +121,7 @@ const Agendamentos = () => {
                 <Button 
                 title='AGENDAR' 
                 
-                onPress={() => navigation.navigate('Home')} />
+                onPress={() => navigation.navigate('calendario')} />
             </View>
         </View>
        
