@@ -21,6 +21,7 @@ function Botoes({ navigation }) {
         title="calendario"
         onPress={() => navigation.navigate('calendario')}
       />
+    
       <Button
         title="login"
         onPress={() => navigation.navigate('login')}
@@ -41,6 +42,8 @@ function Botoes({ navigation }) {
         title="ver_ambientes"
         onPress={() => navigation.navigate('VER AMBIENTES')}
       />
+
+     
 
     </View>
   );
