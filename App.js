@@ -17,8 +17,8 @@ const Stack = createNativeStackNavigator();
 const Rotas = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="telas">
-        <Stack.Screen name='telas' component={AcessoTelas} 
+      <Stack.Navigator initialRouteName="tela_inicio">
+        <Stack.Screen name='ttela_inicio' component={TelaInicio} 
           options={{
             headerTitleAlign: 'center',
             headerTitleStyle: {
@@ -157,6 +157,10 @@ const Rotas = () => {
           }}
         />
         
+
+       
+      
+    
       </Stack.Navigator>
 
       
