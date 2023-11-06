@@ -31,7 +31,7 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
-        <Text style={styles.ambientes}>AMBIENTES</Text>
+        {/* <Text style={styles.ambientes}>AMBIENTES</Text> */}
 
         <View
           style={[

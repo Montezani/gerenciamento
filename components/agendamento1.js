@@ -4,16 +4,7 @@ import DropDownPicker from 'react-native-dropdown-picker';
 
 const Agendamentos = () => {
 
-    const [open, setOpen] = useState(false);
-    const [value, setValue] = useState(null);
-    const [items, setItems] = useState([
-        { label: 'EXATAS', value: 'EXATAS' },
-        { label: 'ETIM', value: 'ETIM' },
-        { label: 'NOVOTEC', value: 'NOVOTEC' },
-        { label: 'BIOLOGICAS', value: 'BIOLOGICAS' },
-        { label: 'LINGUAGENS', value: 'LINGUAGENS' },
-    ]);
-
+    
 
     const [open2, setOpen2] = useState(false); 
     const [value2, setValue2] = useState(null);
@@ -24,6 +15,15 @@ const Agendamentos = () => {
 
     ]);
 
+const [open, setOpen] = useState(false);
+    const [value, setValue] = useState(null);
+    const [items, setItems] = useState([
+        { label: 'EXATAS', value: 'EXATAS' },
+        { label: 'ETIM', value: 'ETIM' },
+        { label: 'NOVOTEC', value: 'NOVOTEC' },
+        { label: 'BIOLOGICAS', value: 'BIOLOGICAS' },
+        { label: 'LINGUAGENS', value: 'LINGUAGENS' },
+    ]);
 
     return (
         <View style={{  flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -60,7 +60,8 @@ const Agendamentos = () => {
 
                 }}>CURSO</Text>
 
-                <DropDownPicker
+                <DropDownPicker  
+                
                     open={open}
                     value={value}
                     items={items}
@@ -70,13 +71,15 @@ const Agendamentos = () => {
                     placeholder="SELECIONAR"
                     placeholderStyle={{ fontWeight: 'bold' }}
                     style={{ backgroundColor: '#E1CBEE', width: '90%', alignSelf: 'center', borderWidth: 0,  borderColor: 'transparent', }}
-                  containerStyle={{ width: '100%' }}
+                    containerStyle={{ width: '100%' }}
                     itemStyle={{ justifyContent: 'flex-start' }}
 /> 
                 <Text style={{
                      textAlign: 'center',
                      fontWeight: 'bold',
                      marginBottom: 10,
+
+                     
                 }}>MÓDULO</Text>
 
                 <DropDownPicker

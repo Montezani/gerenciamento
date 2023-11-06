@@ -10,7 +10,7 @@ function Botoes({ navigation }) {
         onPress={() => navigation.navigate('agendamentos')}
       />
       <Button
-        title="AMBIENTES"
+        title="Ambientes"
         onPress={() => navigation.navigate('ambientes')}
       />
       <Button
