@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native';  // Importe o hook useNavigation
-import { AntDesign } from '@expo/vector-icons';
+
+import { AntDesign } from '@expo/vector-icons'; // Importe os ícones AntDesign
 
 const App = () => {
   const [selectedRoom, setSelectedRoom] = useState(null);
-  const navigation = useNavigation();  // Inicialize o hook de navegação
 
   const handleRoomSelection = (room) => {
     if (selectedRoom === room) {
       setSelectedRoom(null);
     } else {
       setSelectedRoom(room);
-      navigation.navigate('AGENDAMENTOS');  // Navegue para a tela de AGENDAMENTOS
     }
   };
 
@@ -50,7 +48,9 @@ const App = () => {
               </Text>
               <TouchableOpacity
                 style={styles.checkbox}
-                onPress={() => handleRoomSelection(room.id)}
+                onPress={() => handleRoomSelection(room.id)} 
+                onPress={() => navigation.navigate('AGENDAMENTOS')}>
+                
               >
                 <AntDesign
                   name={isRoomSelected(room.id) ? 'checkcircle' : 'checkcircleo'}
@@ -58,6 +58,7 @@ const App = () => {
                   color={isRoomSelected(room.id) ? 'white' : '#A167C9'}
                 />
               </TouchableOpacity>
+
             </View>
             <Text style={styles.availabilityText}>
               Disponibilidade: {isRoomSelected(room.id) ? 'Ocupado' : 'Livre'}

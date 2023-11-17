@@ -22,7 +22,7 @@ const CalendarScreen = ({navigation}) => {
   };
 
   const handleProcurarPress = () => {
-    navigation.navigate('welcome')
+    navigation.navigate('AMBIENTES')
     console.log('asd')
   };
 
