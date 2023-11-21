@@ -45,7 +45,7 @@ export default function CadastroScreen({navigation}) {
         />
       
       <TouchableOpacity style={styles.buttonCadastrar} >
-      <Text style={styles.buttonCadastrarText} onPress={() => navigation.navigate('welcome')}>CADASTRE-SE</Text>
+      <Text style={styles.buttonCadastrarText}>CADASTRE-SE</Text>
       </TouchableOpacity>
 
 
@@ -88,7 +88,8 @@ const styles = StyleSheet.create({
     backgroundColor:'#C299DC',
     borderColor: '#ccc',
     borderRadius: 20,
-    color: 'white'
+    color: 'white',
+    
   },
   buttonCadastrar: {
   width: '50%',

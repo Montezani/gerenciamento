@@ -30,24 +30,6 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
-<<<<<<< HEAD
-        {/* <Text style={styles.ambientes}>AMBIENTES</Text> */}
-
-        <View
-          style={[
-            styles.placeholder,
-            lab4Occupied && { backgroundColor: '#A167C9' }, // Altere a cor para vermelho se ocupado
-          ]}
-        >
-          <View style={styles.horizontalContainer}>
-            <Text
-              style={[
-                styles.title,
-                lab4Occupied && styles.titleOccupied, // Aplicar estilo de texto ocupado
-              ]}
-            >
-              LAB 4
-=======
         <Text style={styles.ambientes}>SELECIONAR AMBIENTE:</Text>
         {roomData.map((room) => (
           <View
@@ -79,7 +61,6 @@ const App = () => {
             </View>
             <Text style={styles.availabilityText}>
               Disponibilidade: {isRoomSelected(room.id) ? 'Ocupado' : 'Livre'}
->>>>>>> 88719ae9159a9df2a7456907e47412fa3b48aaf4
             </Text>
           </View>
         ))}
