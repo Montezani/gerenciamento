@@ -45,7 +45,7 @@ export default function CadastroScreen({navigation}) {
         />
       
       <TouchableOpacity style={styles.buttonCadastrar} >
-      <Text style={styles.buttonCadastrarText}>CADASTRE-SE</Text>
+      <Text style={styles.buttonCadastrarText}>CADASTRAR</Text>
       </TouchableOpacity>
 
 

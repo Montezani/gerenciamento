@@ -148,7 +148,7 @@ const App = ({navigation}) => {
     <Text style={styles.button1}>NOVO AGENDAMENTO</Text>
   </TouchableOpacity>
   <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('VER AMBIENTES')}>
-    <Text style={styles.button2}>VEM AMBIENTES</Text>
+    <Text style={styles.button2}>VER AMBIENTES</Text>
   </TouchableOpacity>
 </View>
 </View>

@@ -121,7 +121,7 @@ const [open, setOpen] = useState(false);
                 <Button 
                 title='AGENDAR' 
                 color='#924DC1' 
-                onPress={() => navigation.navigate('calendario')} />
+                onPress={() => navigation.navigate('welcome')} />
             
             </View>
 
