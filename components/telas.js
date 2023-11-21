@@ -7,11 +7,16 @@ function Botoes({ navigation }) {
       <Text>Botões</Text>
       <Button
         title="agendamentos"
-        onPress={() => navigation.navigate('agendamentos')}
+        onPress={() => navigation.navigate('AGENDAMENTOS')}
       />
       <Button
+<<<<<<< HEAD
         title="Ambientes"
         onPress={() => navigation.navigate('ambientes')}
+=======
+        title="ambientes"
+        onPress={() => navigation.navigate('AMBIENTES')}
+>>>>>>> 88719ae9159a9df2a7456907e47412fa3b48aaf4
       />
       <Button
         title="cadastro"
@@ -21,13 +26,14 @@ function Botoes({ navigation }) {
         title="calendario"
         onPress={() => navigation.navigate('calendario')}
       />
+    
       <Button
         title="login"
         onPress={() => navigation.navigate('login')}
       />
       <Button
         title="gerenciamento"
-        onPress={() => navigation.navigate('gerenciamento')}
+        onPress={() => navigation.navigate('GERENCIAMENTO')}
       />
       <Button
         title="tela_inicio"
@@ -39,8 +45,10 @@ function Botoes({ navigation }) {
       />
       <Button
         title="ver_ambientes"
-        onPress={() => navigation.navigate('ver_ambientes')}
+        onPress={() => navigation.navigate('VER AMBIENTES')}
       />
+
+     
 
     </View>
   );

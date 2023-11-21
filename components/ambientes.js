@@ -4,33 +4,31 @@ import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-na
 import { AntDesign } from '@expo/vector-icons'; // Importe os ícones AntDesign
 
 const App = () => {
-  const [lab4Occupied, setLab4Occupied] = useState(false);
-  const [lab5Occupied, setLab5Occupied] = useState(false);
-  const [lab6Occupied, setLab6Occupied] = useState(false);
-  const [quadraOccupied, setQuadraOccupied] = useState(false);
+  const [selectedRoom, setSelectedRoom] = useState(null);
 
-  const handleCheckboxChange = (target) => {
-    switch (target) {
-      case 'lab4':
-        setLab4Occupied(!lab4Occupied);
-        break;
-      case 'lab5':
-        setLab5Occupied(!lab5Occupied);
-        break;
-      case 'lab6':
-        setLab6Occupied(!lab6Occupied);
-        break;
-      case 'quadra':
-        setQuadraOccupied(!quadraOccupied);
-        break;
-      default:
-        break;
+  const handleRoomSelection = (room) => {
+    if (selectedRoom === room) {
+      setSelectedRoom(null);
+    } else {
+      setSelectedRoom(room);
     }
   };
+
+  const isRoomSelected = (room) => {
+    return selectedRoom === room;
+  };
+
+  const roomData = [
+    { id: 'lab4', name: 'LAB 4' },
+    { id: 'lab5', name: 'LAB 5' },
+    { id: 'lab6', name: 'LAB 6' },
+    { id: 'quadra', name: 'QUADRA' },
+  ];
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
+<<<<<<< HEAD
         {/* <Text style={styles.ambientes}>AMBIENTES</Text> */}
 
         <View
@@ -47,115 +45,42 @@ const App = () => {
               ]}
             >
               LAB 4
+=======
+        <Text style={styles.ambientes}>SELECIONAR AMBIENTE:</Text>
+        {roomData.map((room) => (
+          <View
+            key={room.id}
+            style={[
+              styles.placeholder,
+              isRoomSelected(room.id) && { backgroundColor: '#A167C9' },
+            ]}
+          >
+            <View style={styles.horizontalContainer}>
+              <Text
+                style={[
+                  styles.title,
+                  isRoomSelected(room.id) && styles.titleOccupied,
+                ]}
+              >
+                {room.name}
+              </Text>
+              <TouchableOpacity
+                style={styles.checkbox}
+                onPress={() => handleRoomSelection(room.id)}
+              >
+                <AntDesign
+                  name={isRoomSelected(room.id) ? 'checkcircle' : 'checkcircleo'}
+                  size={30}
+                  color={isRoomSelected(room.id) ? 'white' : '#A167C9'}
+                />
+              </TouchableOpacity>
+            </View>
+            <Text style={styles.availabilityText}>
+              Disponibilidade: {isRoomSelected(room.id) ? 'Ocupado' : 'Livre'}
+>>>>>>> 88719ae9159a9df2a7456907e47412fa3b48aaf4
             </Text>
-            <TouchableOpacity
-              style={styles.checkbox}
-              onPress={() => handleCheckboxChange('lab4')}
-            >
-              <AntDesign
-                name={lab4Occupied ? 'checkcircle' : 'checkcircleo'}
-                size={30}
-                color={lab4Occupied ? 'white' : '#A167C9'} // Cor do ícone
-              />
-            </TouchableOpacity>
           </View>
-          <Text style={styles.availabilityText}>
-            Disponibilidade: {lab4Occupied ? 'Ocupado' : 'Livre'}
-          </Text>
-        </View>
-
-        <View
-          style={[
-            styles.placeholder,
-            lab5Occupied && { backgroundColor: '#A167C9' }, // Altere a cor para vermelho se ocupado
-          ]}
-        >
-          <View style={styles.horizontalContainer}>
-            <Text
-              style={[
-                styles.title,
-                lab5Occupied && styles.titleOccupied, // Aplicar estilo de texto ocupado
-              ]}
-            >
-              LAB 5
-            </Text>
-            <TouchableOpacity
-              style={styles.checkbox}
-              onPress={() => handleCheckboxChange('lab5')}
-            >
-              <AntDesign
-                name={lab5Occupied ? 'checkcircle' : 'checkcircleo'}
-                size={30}
-                color={lab5Occupied ? 'white' : '#A167C9'} // Cor do ícone
-              />
-            </TouchableOpacity>
-          </View>
-          <Text style={styles.availabilityText}>
-            Disponibilidade: {lab5Occupied ? 'Ocupado' : 'Livre'}
-          </Text>
-        </View>
-
-        <View
-          style={[
-            styles.placeholder,
-            lab6Occupied && { backgroundColor: '#A167C9' }, // Altere a cor para vermelho se ocupado
-          ]}
-        >
-          <View style={styles.horizontalContainer}>
-            <Text
-              style={[
-                styles.title,
-                lab6Occupied && styles.titleOccupied, // Aplicar estilo de texto ocupado
-              ]}
-            >
-              LAB 6
-            </Text>
-            <TouchableOpacity
-              style={styles.checkbox}
-              onPress={() => handleCheckboxChange('lab6')}
-            >
-              <AntDesign
-                name={lab6Occupied ? 'checkcircle' : 'checkcircleo'}
-                size={30}
-                color={lab6Occupied ? 'white' : '#A167C9'} // Cor do ícone
-              />
-            </TouchableOpacity>
-          </View>
-          <Text style={styles.availabilityText}>
-            Disponibilidade: {lab6Occupied ? 'Ocupado' : 'Livre'}
-          </Text>
-        </View>
-
-        <View
-          style={[
-            styles.placeholder,
-            quadraOccupied && { backgroundColor: '#A167C9' }, // Altere a cor se estiver ocupado
-          ]}
-        >
-          <View style={styles.horizontalContainer}>
-            <Text
-              style={[
-                styles.title,
-                quadraOccupied && styles.titleOccupied, // Aplicar estilo de texto ocupado
-              ]}
-            >
-              QUADRA
-            </Text>
-            <TouchableOpacity
-              style={styles.checkbox}
-              onPress={() => handleCheckboxChange('quadra')}
-            >
-              <AntDesign
-                name={quadraOccupied ? 'checkcircle' : 'checkcircleo'}
-                size={30}
-                color={quadraOccupied ? 'white' : '#A167C9'} // Cor do ícone
-              />
-            </TouchableOpacity>
-          </View>
-          <Text style={styles.availabilityText}>
-            Disponibilidade: {quadraOccupied ? 'Ocupado' : 'Livre'}
-          </Text>
-        </View>
+        ))}
       </View>
     </SafeAreaView>
   );
@@ -202,17 +127,17 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   checkbox: {
-    width: 25, // Largura ajustada para o ícone do círculo de seleção
-    height: 0, // Altura ajustada para o ícone do círculo de seleção
+    width: 25,
   },
   roundCheckbox: {
-    borderRadius: 1, // Tornar a caixa de seleção redonda
+    borderRadius: 1,
   },
   ambientes: {
     position: 'relative',
     fontWeight: 'bold',
     marginBottom: 45,
-    fontSize: 25,
+    fontSize: 20,
+    right: '12%'
   },
 });
 

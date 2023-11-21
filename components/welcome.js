@@ -3,12 +3,12 @@ import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-na
 
 import { AntDesign } from '@expo/vector-icons'; // Importe os ícones AntDesign
 
-const App = () => {
+const App = ({navigation}) => {
   const [lab4Occupied, setLab4Occupied] = useState(false);
   const [lab5Occupied, setLab5Occupied] = useState(false);
   const [lab6Occupied, setLab6Occupied] = useState(false);
   const [quadraOccupied, setQuadraOccupied] = useState(false);
-
+  
   const handleCheckboxChange = (target) => {
     switch (target) {
       case 'lab4':
@@ -31,12 +31,13 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
-        <Text style={styles.ambientes}>BEM VINDO, USUARIO!</Text>
+        <Text style={styles.ambientes}>BEM VINDO, USUÁRIO!</Text>
+
 
         <View
           style={[
             styles.placeholder,
-            lab4Occupied && { backgroundColor: '#A167C9' }, // Altere a cor para vermelho se ocupado
+            lab4Occupied && { backgroundColor: '#A167C9', }, // Altere a cor para vermelho se ocupado
           ]}
         >
           <View style={styles.horizontalContainer}>
@@ -50,18 +51,15 @@ const App = () => {
             </Text>
             <TouchableOpacity
               style={styles.checkbox}
-              onPress={() => handleCheckboxChange('lab4')}
+             
             >
-              <AntDesign
-                name={lab4Occupied ? 'checkcircle' : 'checkcircleo'}
-                size={30}
-                color={lab4Occupied ? 'white' : '#A167C9'} // Cor do ícone
-              />
+  
+              <AntDesign name="delete" size={24} color="black" />
+
+
             </TouchableOpacity>
           </View>
-          <Text style={styles.availabilityText}>
-            Disponibilidade: {lab4Occupied ? 'Ocupado' : 'Livre'}
-          </Text>
+          
         </View>
 
         <View
@@ -81,18 +79,14 @@ const App = () => {
             </Text>
             <TouchableOpacity
               style={styles.checkbox}
-              onPress={() => handleCheckboxChange('lab5')}
+              
             >
-              <AntDesign
-                name={lab5Occupied ? 'checkcircle' : 'checkcircleo'}
-                size={30}
-                color={lab5Occupied ? 'white' : '#A167C9'} // Cor do ícone
-              />
+              <AntDesign name="delete" size={24} color="black" />
+
+
             </TouchableOpacity>
           </View>
-          <Text style={styles.availabilityText}>
-            Disponibilidade: {lab5Occupied ? 'Ocupado' : 'Livre'}
-          </Text>
+          
         </View>
 
         <View
@@ -112,18 +106,13 @@ const App = () => {
             </Text>
             <TouchableOpacity
               style={styles.checkbox}
-              onPress={() => handleCheckboxChange('lab6')}
+             
             >
-              <AntDesign
-                name={lab6Occupied ? 'checkcircle' : 'checkcircleo'}
-                size={30}
-                color={lab6Occupied ? 'white' : '#A167C9'} // Cor do ícone
-              />
+             <AntDesign name="delete" size={24} color="black" />
+
             </TouchableOpacity>
           </View>
-          <Text style={styles.availabilityText}>
-            Disponibilidade: {lab6Occupied ? 'Ocupado' : 'Livre'}
-          </Text>
+         
         </View>
 
         <View
@@ -143,22 +132,28 @@ const App = () => {
             </Text>
             <TouchableOpacity
               style={styles.checkbox}
-              onPress={() => handleCheckboxChange('quadra')}
+             
             >
-              <AntDesign
-                name={quadraOccupied ? 'checkcircle' : 'checkcircleo'}
-                size={30}
-                color={quadraOccupied ? 'white' : '#A167C9'} // Cor do ícone
-              />
+             <AntDesign name="delete" size={24} color="black" />
+             
             </TouchableOpacity>
           </View>
-          <Text style={styles.availabilityText}>
-            Disponibilidade: {quadraOccupied ? 'Ocupado' : 'Livre'}
-          </Text>
-        </View>
-      </View>
-    </SafeAreaView>
-  );
+         
+
+          </View>
+
+{/* Contêiner para os botões */}
+<View style={styles.buttonContainer}>
+  <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('calendario')}>
+    <Text style={styles.button1}>NOVO AGENDAMENTO</Text>
+  </TouchableOpacity>
+  <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('VER AMBIENTES')}>
+    <Text style={styles.button2}>VEM AMBIENTES</Text>
+  </TouchableOpacity>
+</View>
+</View>
+</SafeAreaView>
+);
 };
 
 const styles = StyleSheet.create({
@@ -166,6 +161,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'flex-start',
+     
   },
 
   titleOccupied: {
@@ -174,7 +170,7 @@ const styles = StyleSheet.create({
 
   content: {
     alignItems: 'center',
-    width: '50%',
+    width: '90%',
   },
 
   placeholder: {
@@ -182,7 +178,7 @@ const styles = StyleSheet.create({
     padding: 12,
     width: '90%',
     borderRadius: 20,
-    margin: 30,
+    margin: 10,
   },
 
   title: {
@@ -202,8 +198,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   checkbox: {
-    width: 25, // Largura ajustada para o ícone do círculo de seleção
-    height: 0, // Altura ajustada para o ícone do círculo de seleção
+    
   },
   roundCheckbox: {
     borderRadius: 1, // Tornar a caixa de seleção redonda
@@ -214,6 +209,42 @@ const styles = StyleSheet.create({
     marginBottom: 45,
     fontSize: 25,
   },
+  buttonContainer: {
+    flexDirection: 'column', // Coloca os botões lado a lado
+    alignItems: 'center',
+    
+  },  
+
+  
+button1:{
+  backgroundColor: '#924DC1',
+  padding: 15,
+  width: '100%',
+  fontWeight: 'bold',
+  marginTop: 150,
+  borderRadius: 15,
+  marginBottom: 20,
+  alignItems: 'flex-start', 
+  color:'white',
+  borderWidth: 0,
+
+},
+
+button2:{
+  backgroundColor: '#924DC1',
+  padding: 15,
+  fontWeight: 'bold',
+  marginTop: 20,
+  width: '100%',
+  borderRadius: 15,
+  marginBottom: 20,
+  alignItems: 'flex-start', 
+  color:'white',
+  borderWidth: 0,
+  
+  
+},
+  
 });
 
 export default App;

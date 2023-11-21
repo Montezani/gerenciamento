@@ -14,7 +14,7 @@ LocaleConfig.locales['pt-br'] = {
 };
 LocaleConfig.defaultLocale = 'pt-br';
 
-const CalendarScreen = () => {
+const CalendarScreen = ({navigation}) => {
   const [selectedDate, setSelectedDate] = useState('');
 
   const onDayPress = (day) => {
@@ -22,12 +22,13 @@ const CalendarScreen = () => {
   };
 
   const handleProcurarPress = () => {
-    // Implemente a lógica para lidar com o botão "Procurar" aqui
+    navigation.navigate('welcome')
+    console.log('asd')
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.selectText}>SELECIONE UM DIA</Text>
+      <Text style={styles.selectText}>SELECIONE UM DIA:</Text>
       <View style={styles.calendarContainer}>
         <Calendar
           style={styles.calendar}
@@ -82,10 +83,12 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   selectText: {
-    position: 'flex',
-    fontSize: 24,
+    position: 'relative',
+    fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
+    right: '12%'
+    
   },
   buttonContainer: {
     flexDirection: 'column', // Exibe os botões em coluna
