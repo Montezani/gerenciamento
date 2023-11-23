@@ -14,7 +14,7 @@ import Ver from './components/VER AMBIENTES'
 
 const Stack = createNativeStackNavigator();
 
-const Rotas = () => {
+const Rotas = ({route}) => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="telas">

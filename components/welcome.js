@@ -1,121 +1,73 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
 
+import api from './services/api';
+
 import { AntDesign } from '@expo/vector-icons'; // Importe os ícones AntDesign
 
-const App = ({navigation}) => {
+const App = ({ navigation, route }) => {
   const [lab4Occupied, setLab4Occupied] = useState(false);
   const [lab5Occupied, setLab5Occupied] = useState(false);
   const [lab6Occupied, setLab6Occupied] = useState(false);
   const [quadraOccupied, setQuadraOccupied] = useState(false);
-  
-  const handleCheckboxChange = (target) => {
-    switch (target) {
-      case 'lab4':
-        setLab4Occupied(!lab4Occupied);
-        break;
-      case 'lab5':
-        setLab5Occupied(!lab5Occupied);
-        break;
-      case 'lab6':
-        setLab6Occupied(!lab6Occupied);
-        break;
-      case 'quadra':
-        setQuadraOccupied(!quadraOccupied);
-        break;
-      default:
-        break;
+
+  const reservas = [
+    {
+      "reh_id" : 9, 
+      "esp_nome": "Lab. 1",
+      "res_modulo": 1,
+      "cur_nome": "ETIM",
+      "hor_inicio": "10:05:00",
+      "hor_fim": "10:55:00"
+    },
+    {
+      "reh_id" : 10, 
+      "esp_nome": "Lab. 1",
+      "res_modulo": 1,
+      "cur_nome": "ETIM",
+      "hor_inicio": "10:55:00",
+      "hor_fim": "11:45:00"
     }
-  };
+  ];
+
+  const { id, nome } = route.params.info;
+
+  // const handleCheckboxChange = (target) => {
+  //   switch (target) {
+  //     case 'lab4':
+  //       setLab4Occupied(!lab4Occupied);
+  //       break;
+  //     case 'lab5':
+  //       setLab5Occupied(!lab5Occupied);
+  //       break;
+  //     case 'lab6':
+  //       setLab6Occupied(!lab6Occupied);
+  //       break;
+  //     case 'quadra':
+  //       setQuadraOccupied(!quadraOccupied);
+  //       break;
+  //     default:
+  //       break;
+  //   }
+  // };
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
-        <Text style={styles.ambientes}>BEM VINDO, USUÁRIO!</Text>
+        <Text style={styles.ambientes}>BEM VINDO, {nome}!</Text>
 
 
-        <View
-          style={[
-            styles.placeholder,
-            lab4Occupied && { backgroundColor: '#A167C9', }, // Altere a cor para vermelho se ocupado
-          ]}
-        >
-          <View style={styles.horizontalContainer}>
-            <Text
-              style={[
-                styles.title,
-                lab4Occupied && styles.titleOccupied, // Aplicar estilo de texto ocupado
-              ]}
-            >
-              LAB 4
-            </Text>
-            <TouchableOpacity
-              style={styles.checkbox}
-             
-            >
-  
-              <AntDesign name="delete" size={24} color="black" />
+
+        {
+          reservas.map(
+            reserva => {
+              return <CardLabRes dados={reserva} key={reserva.reh_id} />
+            }
+          )
+        }
 
 
-            </TouchableOpacity>
-          </View>
-          
-        </View>
-
-        <View
-          style={[
-            styles.placeholder,
-            lab5Occupied && { backgroundColor: '#A167C9' }, // Altere a cor para vermelho se ocupado
-          ]}
-        >
-          <View style={styles.horizontalContainer}>
-            <Text
-              style={[
-                styles.title,
-                lab5Occupied && styles.titleOccupied, // Aplicar estilo de texto ocupado
-              ]}
-            >
-              LAB 5
-            </Text>
-            <TouchableOpacity
-              style={styles.checkbox}
-              
-            >
-              <AntDesign name="delete" size={24} color="black" />
-
-
-            </TouchableOpacity>
-          </View>
-          
-        </View>
-
-        <View
-          style={[
-            styles.placeholder,
-            lab6Occupied && { backgroundColor: '#A167C9' }, // Altere a cor para vermelho se ocupado
-          ]}
-        >
-          <View style={styles.horizontalContainer}>
-            <Text
-              style={[
-                styles.title,
-                lab6Occupied && styles.titleOccupied, // Aplicar estilo de texto ocupado
-              ]}
-            >
-              LAB 6
-            </Text>
-            <TouchableOpacity
-              style={styles.checkbox}
-             
-            >
-             <AntDesign name="delete" size={24} color="black" />
-
-            </TouchableOpacity>
-          </View>
-         
-        </View>
-
-        <View
+        {/* <View
           style={[
             styles.placeholder,
             quadraOccupied && { backgroundColor: '#A167C9' }, // Altere a cor se estiver ocupado
@@ -140,28 +92,59 @@ const App = ({navigation}) => {
           </View>
          
 
-          </View>
+          </View> */}
 
-{/* Contêiner para os botões */}
-<View style={styles.buttonContainer}>
-  <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('calendario')}>
-    <Text style={styles.button1}>NOVO AGENDAMENTO</Text>
-  </TouchableOpacity>
-  <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('VER AMBIENTES')}>
-    <Text style={styles.button2}>VER AMBIENTES</Text>
-  </TouchableOpacity>
-</View>
-</View>
-</SafeAreaView>
-);
+        {/* Contêiner para os botões */}
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('calendario')}>
+            <Text style={styles.button1}>NOVO AGENDAMENTO</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('VER AMBIENTES')}>
+            <Text style={styles.button2}>VER AMBIENTES</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </SafeAreaView>
+  );
 };
+
+
+function CardLabRes(dados) {
+  return (
+    <View
+      style={[
+        styles.placeholder,
+      ]}
+    >
+      <View style={styles.horizontalContainer}>
+        <Text
+          style={[
+            styles.title,
+          ]}
+        >
+          {dados.esp_nome}
+        </Text>
+        <TouchableOpacity
+          style={styles.checkbox}
+
+        >
+
+          <AntDesign name="delete" size={24} color="black" />
+
+
+        </TouchableOpacity>
+      </View>
+
+    </View>
+  );
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'flex-start',
-     
+
   },
 
   titleOccupied: {
@@ -198,7 +181,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   checkbox: {
-    
+
   },
   roundCheckbox: {
     borderRadius: 1, // Tornar a caixa de seleção redonda
@@ -212,39 +195,39 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'column', // Coloca os botões lado a lado
     alignItems: 'center',
-    
-  },  
 
-  
-button1:{
-  backgroundColor: '#924DC1',
-  padding: 15,
-  width: '100%',
-  fontWeight: 'bold',
-  marginTop: 150,
-  borderRadius: 15,
-  marginBottom: 20,
-  alignItems: 'flex-start', 
-  color:'white',
-  borderWidth: 0,
+  },
 
-},
 
-button2:{
-  backgroundColor: '#924DC1',
-  padding: 15,
-  fontWeight: 'bold',
-  marginTop: 20,
-  width: '100%',
-  borderRadius: 15,
-  marginBottom: 20,
-  alignItems: 'flex-start', 
-  color:'white',
-  borderWidth: 0,
-  
-  
-},
-  
+  button1: {
+    backgroundColor: '#924DC1',
+    padding: 15,
+    width: '100%',
+    fontWeight: 'bold',
+    marginTop: 150,
+    borderRadius: 15,
+    marginBottom: 20,
+    alignItems: 'flex-start',
+    color: 'white',
+    borderWidth: 0,
+
+  },
+
+  button2: {
+    backgroundColor: '#924DC1',
+    padding: 15,
+    fontWeight: 'bold',
+    marginTop: 20,
+    width: '100%',
+    borderRadius: 15,
+    marginBottom: 20,
+    alignItems: 'flex-start',
+    color: 'white',
+    borderWidth: 0,
+
+
+  },
+
 });
 
 export default App;
