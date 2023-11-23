@@ -3,6 +3,9 @@ import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { Calendar, LocaleConfig } from 'react-native-calendars';
 import { Entypo } from '@expo/vector-icons';
 
+import Ambientes from './ambientes';
+import Agendamentos from './AGENDAMENTOS';
+
 LocaleConfig.locales['pt-br'] = {
   monthNames: [
     'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
@@ -14,53 +17,67 @@ LocaleConfig.locales['pt-br'] = {
 };
 LocaleConfig.defaultLocale = 'pt-br';
 
-const CalendarScreen = ({navigation}) => {
+
+const CalendarScreen = ({ navigation, route }) => {
+  const [vis, setVis] = useState(0);
   const [selectedDate, setSelectedDate] = useState('');
+
+  const { id, nome } = route.params.info;
+  const info = { id, nome };
 
   const onDayPress = (day) => {
     setSelectedDate(day.dateString);
   };
 
   const handleProcurarPress = () => {
-    navigation.navigate('AMBIENTES')
+    navigation.navigate('AMBIENTES', { info })
     console.log('asd')
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.selectText}>SELECIONE UM DIA:</Text>
-      <View style={styles.calendarContainer}>
-        <Calendar
-          style={styles.calendar}
-          theme={{
-            calendarBackground: '#E1CBEE',
-            textSectionTitleColor: 'black',
-            dayTextColor: 'black',
-            todayTextColor: 'black',
-            selectedDayTextColor: 'white',
-            monthTextColor: 'black',
-            arrowColor: 'black',
-            // Defina a cor dos números do calendário
-            calendarTextColor: 'black', // Cor dos números do calendário
-          }}
-          onDayPress={onDayPress}
-          markedDates={{ [selectedDate]: { selected: true, disableTouchEvent: true, selectedColor: '#924DC1' } }}
-        />
-        <View style={styles.buttonContainer}>
-          <Text style={styles.label}>HORÁRIO</Text>
-          <View style={styles.buttonGroup}>
-            <TouchableOpacity style={styles.button}>
-              <Text style={styles.textS}>INÍCIO <Entypo name="plus" size={20} color="black" /> </Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.button}>
-              <Text style={styles.textS}>FIM <Entypo name="plus" size={20} color="black" /> </Text>
+
+      {(vis === 0 &&
+        <>
+        <Text style={styles.selectText}>SELECIONE UM DIA:</Text>
+        <View style={styles.calendarContainer}>
+          <Calendar
+            style={styles.calendar}
+            theme={{
+              calendarBackground: '#E1CBEE',
+              textSectionTitleColor: 'black',
+              dayTextColor: 'black',
+              todayTextColor: 'black',
+              selectedDayTextColor: 'white',
+              monthTextColor: 'black',
+              arrowColor: 'black',
+              // Defina a cor dos números do calendário
+              calendarTextColor: 'black', // Cor dos números do calendário
+            }}
+            onDayPress={onDayPress}
+            markedDates={{ [selectedDate]: { selected: true, disableTouchEvent: true, selectedColor: '#924DC1' } }}
+          />
+          <View style={styles.buttonContainer}>
+            <Text style={styles.label}>HORÁRIO</Text>
+            <View style={styles.buttonGroup}>
+              <TouchableOpacity style={styles.button}>
+                <Text style={styles.textS}>INÍCIO <Entypo name="plus" size={20} color="black" /> </Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.button}>
+                <Text style={styles.textS}>FIM <Entypo name="plus" size={20} color="black" /> </Text>
+              </TouchableOpacity>
+            </View>
+            <TouchableOpacity style={[styles.procurarButton]} onPress={handleProcurarPress}>
+              <Text style={styles.procurarText}>Procurar</Text>
             </TouchableOpacity>
           </View>
-          <TouchableOpacity style={[styles.procurarButton]} onPress={handleProcurarPress}>
-            <Text style={styles.procurarText}>Procurar</Text>
-          </TouchableOpacity>
         </View>
-      </View>
+      </>)
+        || (vis === 2 &&
+          <Ambientes />)
+        ||
+        <Agendamentos />
+      }
     </View>
   );
 };
@@ -88,7 +105,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     right: '12%'
-    
+
   },
   buttonContainer: {
     flexDirection: 'column', // Exibe os botões em coluna

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
 
 import api from './services/api';
@@ -11,26 +11,43 @@ const App = ({ navigation, route }) => {
   const [lab6Occupied, setLab6Occupied] = useState(false);
   const [quadraOccupied, setQuadraOccupied] = useState(false);
 
-  const reservas = [
+  let reservasOff = [
     {
-      "reh_id" : 9, 
-      "esp_nome": "Lab. 1",
-      "res_modulo": 1,
-      "cur_nome": "ETIM",
-      "hor_inicio": "10:05:00",
-      "hor_fim": "10:55:00"
+      reh_id: 9,
+      esp_nome: "Lab. 1",
+      res_modulo: 1,
+      cur_nome: "ETIM",
+      hor_inicio: "10:05:00",
+      hor_fim: "10:55:00"
     },
     {
-      "reh_id" : 10, 
-      "esp_nome": "Lab. 1",
-      "res_modulo": 1,
-      "cur_nome": "ETIM",
-      "hor_inicio": "10:55:00",
-      "hor_fim": "11:45:00"
+      reh_id: 10,
+      esp_nome: "Lab. 1",
+      res_modulo: 1,
+      cur_nome: "ETIM",
+      hor_inicio: "10:55:00",
+      hor_fim: "11:45:00"
     }
   ];
 
-  const { id, nome } = route.params.info;
+  const [reservas, setReservas] = useState([]);
+
+  const { id, nome } = route.params.info; 
+  const info = { id, nome }; 
+
+  async function listaAgenda() {
+    try {
+      const response = await api.get('/reservasdiausuario/' + id);
+      setReservas(response.data);
+    } catch (error) {
+      alert(error);
+      setReservas(reservasOff);
+    }
+  }
+
+  useEffect(() => {
+    listaAgenda();
+  }, []);
 
   // const handleCheckboxChange = (target) => {
   //   switch (target) {
@@ -51,20 +68,40 @@ const App = ({ navigation, route }) => {
   //   }
   // };
 
+
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
         <Text style={styles.ambientes}>BEM VINDO, {nome}!</Text>
 
 
-
         {
+          reservas.length > 0
+            ?
+            reservas.map(
+              reserva => {
+                return <CardLabRes dados={reserva} key={reserva.reh_id} />
+              }
+            )
+            :
+            <View>
+              <Text
+                style={[
+                  styles.title,
+                ]}
+              >
+                Não existem reservas na data de hoje
+              </Text>
+            </View>
+        }
+        {/* {
           reservas.map(
             reserva => {
               return <CardLabRes dados={reserva} key={reserva.reh_id} />
             }
           )
-        }
+        } */}
 
 
         {/* <View
@@ -96,7 +133,7 @@ const App = ({ navigation, route }) => {
 
         {/* Contêiner para os botões */}
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('calendario')}>
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('calendario', {info})}>
             <Text style={styles.button1}>NOVO AGENDAMENTO</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('VER AMBIENTES')}>
@@ -109,7 +146,7 @@ const App = ({ navigation, route }) => {
 };
 
 
-function CardLabRes(dados) {
+function CardLabRes({ dados }) {
   return (
     <View
       style={[
@@ -122,7 +159,7 @@ function CardLabRes(dados) {
             styles.title,
           ]}
         >
-          {dados.esp_nome}
+          {dados.esp_nome + ' ' + dados.res_modulo + 'º ' + dados.cur_nome + ' - ' + dados.hor_inicio}
         </Text>
         <TouchableOpacity
           style={styles.checkbox}
@@ -134,7 +171,6 @@ function CardLabRes(dados) {
 
         </TouchableOpacity>
       </View>
-
     </View>
   );
 }

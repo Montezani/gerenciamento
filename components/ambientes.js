@@ -3,16 +3,19 @@ import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-na
 import { useNavigation } from '@react-navigation/native';  // Importe o hook useNavigation
 import { AntDesign } from '@expo/vector-icons';
 
-const App = () => {
+const Ambientes = ({route}) => {
   const [selectedRoom, setSelectedRoom] = useState(null);
   const navigation = useNavigation();  // Inicialize o hook de navegação
+
+  const { id, nome } = route.params.info; 
+  const info = { id, nome }; 
 
   const handleRoomSelection = (room) => {
     if (selectedRoom === room) {
       setSelectedRoom(null);
     } else {
       setSelectedRoom(room);
-      navigation.navigate('AGENDAMENTOS');  // Navegue para a tela de AGENDAMENTOS
+      navigation.navigate('AGENDAMENTOS', {info});  // Navegue para a tela de AGENDAMENTOS
     }
   };
 
@@ -124,4 +127,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default Ambientes;

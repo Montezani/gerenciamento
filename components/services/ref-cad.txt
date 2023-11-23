@@ -1,0 +1,4 @@
+welcome - lista agenda dia - nv agend. abre calendario
+calendário - pegar data e horário baseado na faixa de horários - abre lista ambientes
+ambientes - listar ambientes disponíveis no dia e horário - abre agendamentos
+agendamentos recebe info e volta para welcome
