@@ -41,11 +41,11 @@ export default function CadastroScreen({navigation}) {
           secureTextEntry
         />
       
-      <TouchableOpacity style={styles.buttonEntrar} onPress={() => navigation.navigate('cadastro')}>
+      <TouchableOpacity style={styles.buttonEntrar} >
       <Text style={styles.buttonCadastrarText} onPress={() => navigation.navigate('welcome')}>ENTRAR</Text>
       </TouchableOpacity>
        <TouchableOpacity style={styles.buttonCadastrar} >
-      <Text style={styles.buttonCadastrarText}>CADASTRE-SE</Text>
+      <Text style={styles.buttonCadastrarText}onPress={() => navigation.navigate('cadastro')}>CADASTRE-SE</Text>
       </TouchableOpacity>
 
 

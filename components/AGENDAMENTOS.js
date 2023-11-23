@@ -4,16 +4,7 @@ import DropDownPicker from 'react-native-dropdown-picker';
 
 const Agendamentos = ({navigation}) => {
 
-    const [open, setOpen] = useState(false);
-    const [value, setValue] = useState(null);
-    const [items, setItems] = useState([
-        { label: 'EXATAS', value: 'EXATAS' },
-        { label: 'ETIM', value: 'ETIM' },
-        { label: 'NOVOTEC', value: 'NOVOTEC' },
-        { label: 'BIOLOGICAS', value: 'BIOLOGICAS' },
-        { label: 'LINGUAGENS', value: 'LINGUAGENS' },
-    ]);
-
+    
 
     const [open2, setOpen2] = useState(false); 
     const [value2, setValue2] = useState(null);
@@ -24,6 +15,15 @@ const Agendamentos = ({navigation}) => {
 
     ]);
 
+const [open, setOpen] = useState(false);
+    const [value, setValue] = useState(null);
+    const [items, setItems] = useState([
+        { label: 'EXATAS', value: 'EXATAS' },
+        { label: 'ETIM', value: 'ETIM' },
+        { label: 'NOVOTEC', value: 'NOVOTEC' },
+        { label: 'BIOLOGICAS', value: 'BIOLOGICAS' },
+        { label: 'LINGUAGENS', value: 'LINGUAGENS' },
+    ]);
 
     return (
         <View style={{  flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -47,7 +47,8 @@ const Agendamentos = ({navigation}) => {
 
                 }}>CURSO</Text>
 
-                <DropDownPicker
+                <DropDownPicker  
+                
                     open={open}
                     value={value}
                     items={items}
@@ -57,7 +58,7 @@ const Agendamentos = ({navigation}) => {
                     placeholder="SELECIONAR"
                     placeholderStyle={{ fontWeight: 'bold' }}
                     style={{ backgroundColor: '#E1CBEE', width: '90%', alignSelf: 'center', borderWidth: 0,  borderColor: 'transparent', }}
-                  containerStyle={{ width: '100%' }}
+                    containerStyle={{ width: '100%' }}
                     itemStyle={{ justifyContent: 'flex-start' }}
 /> 
 <Text style={{
@@ -99,6 +100,8 @@ const Agendamentos = ({navigation}) => {
                      textAlign: 'center',
                      fontWeight: 'bold',
                      marginBottom: 10,
+
+                     
                 }}>MÓDULO</Text>
 
                 <DropDownPicker
@@ -118,7 +121,7 @@ const Agendamentos = ({navigation}) => {
                 <Button 
                 title='AGENDAR' 
                 color='#924DC1' 
-                onPress={() => navigation.navigate('calendario')} />
+                onPress={() => navigation.navigate('welcome')} />
             
             </View>
 

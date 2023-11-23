@@ -3,7 +3,7 @@ import { View, TextInput, Button, StyleSheet, KeyboardAvoidingView, Platform, Im
 
 import icone from '../assets/icon-TCC.png';
 
-export default function CadastroScreen() {
+export default function CadastroScreen({navigation}) {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
@@ -45,7 +45,7 @@ export default function CadastroScreen() {
         />
       
       <TouchableOpacity style={styles.buttonCadastrar} >
-      <Text style={styles.buttonCadastrarText}>CADASTRE-SE</Text>
+      <Text style={styles.buttonCadastrarText}>CADASTRAR</Text>
       </TouchableOpacity>
 
 
@@ -88,7 +88,8 @@ const styles = StyleSheet.create({
     backgroundColor:'#C299DC',
     borderColor: '#ccc',
     borderRadius: 20,
-    color: 'white'
+    color: 'white',
+    
   },
   buttonCadastrar: {
   width: '50%',

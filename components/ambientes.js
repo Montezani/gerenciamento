@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
-
-import { AntDesign } from '@expo/vector-icons'; // Importe os ícones AntDesign
+import { useNavigation } from '@react-navigation/native';  // Importe o hook useNavigation
+import { AntDesign } from '@expo/vector-icons';
 
 const App = () => {
   const [selectedRoom, setSelectedRoom] = useState(null);
+  const navigation = useNavigation();  // Inicialize o hook de navegação
 
   const handleRoomSelection = (room) => {
     if (selectedRoom === room) {
       setSelectedRoom(null);
     } else {
       setSelectedRoom(room);
+      navigation.navigate('AGENDAMENTOS');  // Navegue para a tela de AGENDAMENTOS
     }
   };
 
