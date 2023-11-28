@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { View, Text, Button, TextInput, StyleSheet } from 'react-native'
 import DropDownPicker from 'react-native-dropdown-picker';
 
-const Agendamentos = ({navigation, route}) => {
+const Agendamentos = ({ navigation, route }) => {
 
-    const { id, nome } = route.params.info; 
-    const info = { id, nome }; 
+    const { id, nome } = route.params.info;
+    const info = { id, nome };
 
-    const [open2, setOpen2] = useState(false); 
+    const [open2, setOpen2] = useState(false);
     const [value2, setValue2] = useState(null);
     const [items2, setItems2] = useState([
         { label: '1°', value: '1°' },
@@ -16,7 +16,7 @@ const Agendamentos = ({navigation, route}) => {
 
     ]);
 
-const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(false);
     const [value, setValue] = useState(null);
     const [items, setItems] = useState([
         { label: 'EXATAS', value: 'EXATAS' },
@@ -27,7 +27,7 @@ const [open, setOpen] = useState(false);
     ]);
 
     return (
-        <View style={{  flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <View style={{
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -36,20 +36,20 @@ const [open, setOpen] = useState(false);
                 height: 600,
                 width: 370,
                 borderRadius: 50,
-               
+
             }}>
 
-                
+
 
                 <Text style={{
-                     textAlign: 'center',
-                     fontWeight: 'bold',
-                     marginBottom: 10,
+                    textAlign: 'center',
+                    fontWeight: 'bold',
+                    marginBottom: 10,
 
                 }}>CURSO</Text>
 
-                <DropDownPicker  
-                
+                <DropDownPicker
+
                     open={open}
                     value={value}
                     items={items}
@@ -58,11 +58,11 @@ const [open, setOpen] = useState(false);
                     setItems={setItems}
                     placeholder="SELECIONAR"
                     placeholderStyle={{ fontWeight: 'bold' }}
-                    style={{ backgroundColor: '#E1CBEE', width: '90%', alignSelf: 'center', borderWidth: 0,  borderColor: 'transparent', }}
+                    style={{ backgroundColor: '#E1CBEE', width: '90%', alignSelf: 'center', borderWidth: 0, borderColor: 'transparent', }}
                     containerStyle={{ width: '100%' }}
                     itemStyle={{ justifyContent: 'flex-start' }}
-/> 
-<Text style={{
+                />
+                <Text style={{
                     textAlign: 'center',
                     fontWeight: 'bold',
                     marginBottom: 10,
@@ -75,34 +75,34 @@ const [open, setOpen] = useState(false);
                     borderRadius: 9,
                     placeholder: 'SELECIONAR',
                     marginBottom: 10,
-                   
-                    
+
+
                 }}>
-                </TextInput>   
+                </TextInput>
 
-                 <Text style={{
-                 
-                 textAlign: 'center',
-                 fontWeight: 'bold',
-                 marginBottom: 10,
-                 }}>CONTEÚDO</Text>
-                 
-                 <TextInput style={{
-                 backgroundColor: '#E1CBEE',
-                 height: 60,
-                 borderRadius: 9,
-                 marginBottom:10,
-                 
-                 }}>
-                 </TextInput>
-                 
-                 
-                 <Text style={{
-                     textAlign: 'center',
-                     fontWeight: 'bold',
-                     marginBottom: 10,
+                <Text style={{
 
-                     
+                    textAlign: 'center',
+                    fontWeight: 'bold',
+                    marginBottom: 10,
+                }}>CONTEÚDO</Text>
+
+                <TextInput style={{
+                    backgroundColor: '#E1CBEE',
+                    height: 60,
+                    borderRadius: 9,
+                    marginBottom: 10,
+
+                }}>
+                </TextInput>
+
+
+                <Text style={{
+                    textAlign: 'center',
+                    fontWeight: 'bold',
+                    marginBottom: 10,
+
+
                 }}>MÓDULO</Text>
 
                 <DropDownPicker
@@ -114,26 +114,26 @@ const [open, setOpen] = useState(false);
                     setItems={setItems2}
                     placeholder="SELECIONAR"
                     placeholderStyle={{ fontWeight: 'bold' }}
-                    style={{ backgroundColor: '#E1CBEE', width: '90%', alignSelf: 'center', borderWidth: 0,  borderColor: 'transparent', marginBottom: 20 }}
+                    style={{ backgroundColor: '#E1CBEE', width: '90%', alignSelf: 'center', borderWidth: 0, borderColor: 'transparent', marginBottom: 20 }}
                     containerStyle={{ width: '100%' }}
                     itemStyle={{ justifyContent: 'flex-start' }}
                 />
 
-                <Button 
-                title='AGENDAR' 
-                color='#924DC1' 
-                onPress={() => navigation.navigate('welcome', {info})} />
-            
+                <Button
+                    title='AGENDAR'
+                    color='#924DC1'
+                    onPress={() => navigation.navigate('welcome', { info })} />
+
             </View>
 
-            
+
         </View>
 
 
-       
+
     )
 
 }
 
-  
+
 export default Agendamentos

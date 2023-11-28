@@ -159,7 +159,7 @@ function CardLabRes({ dados }) {
             styles.title,
           ]}
         >
-          {dados.esp_nome + ' ' + dados.res_modulo + 'º ' + dados.cur_nome + ' - ' + dados.hor_inicio}
+          {dados.esp_nome + ' - ' + dados.res_modulo + 'º ' + dados.cur_nome + ' - ' + dados.hor_inicio}
         </Text>
         <TouchableOpacity
           style={styles.checkbox}
